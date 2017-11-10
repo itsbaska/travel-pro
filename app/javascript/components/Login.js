@@ -1,6 +1,6 @@
 import React, {Component} from "react"
 import PropTypes from "prop-types"
-class HelloWorld extends Component {
+class Login extends Component {
   componentDidMount(){
     console.log(this.props)
   }
@@ -8,13 +8,14 @@ class HelloWorld extends Component {
   render() {
     return (
       <div>
-      something
+        <label>{this.props}</label>
       </div>
     );
   }
 }
 
-HelloWorld.propTypes = {
-  greeting: PropTypes.string
+Login.propTypes = {
+  email: PropTypes.string,
+  password: PropTypes.string
 };
-export default HelloWorld
+export default Login
