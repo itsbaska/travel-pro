@@ -4,6 +4,4 @@ Rails.application.routes.draw do
   resources :trips
   root to: "trips#index"
   resources :receipts, only: [:new, :create, :show]
- # get '/receipts/new', to: "receipts#new"
- # post '/receipts', to: "receipts#create"
 end
