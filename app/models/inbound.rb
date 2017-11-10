@@ -1,0 +1,4 @@
+class Inbound < ApplicationRecord
+  belongs_to :travelgrouping
+  validates :airline, :arrival, :departure, :airport, presence: true
+end
