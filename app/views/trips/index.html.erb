@@ -1,0 +1,8 @@
+<%= javascript_pack_tag 'trips_index' %>
+<%= content_tag :div,
+  id: "hello-react",
+  data: {
+    message: 'Hello!',
+    name: @user
+}.to_json do %>
+<% end %>
