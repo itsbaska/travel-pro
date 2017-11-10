@@ -6,9 +6,16 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import HelloWorld from '../components/HelloWorld'
+import Login from '../components/Login'
+
+const SignIn = props => (
+  <div> <Login/> </div>
+)
 
 const Hello = props => (
-  <div>Hello {props.name}! <HelloWorld/> </div>
+  <div>Hello {props.name}! <HelloWorld/>
+  Hello {props.message}! <HelloWorld/> </div>
+
 )
 
 Hello.defaultProps = {
@@ -18,6 +25,7 @@ Hello.defaultProps = {
 Hello.propTypes = {
   name: PropTypes.string
 }
+
 document.addEventListener('DOMContentLoaded', () => {
   const node = document.getElementById('hello-react')
   const data = JSON.parse(node.getAttribute('data'))

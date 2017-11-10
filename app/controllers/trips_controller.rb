@@ -1,5 +1,5 @@
 class TripsController < ApplicationController
   def index
-    @user = "pauly shore"
+    @user = User.second.first_name
   end
 end
