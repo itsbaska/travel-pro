@@ -16,10 +16,10 @@ trip1 = Trip.create(name: "Sister the travelling pants convention", location: "P
 trip2 = Trip.create(name: "DBC reunion", location: "Bahamas", budget: 78.03, organizer: user1)
 trip3 = Trip.create(name: "Dodge Ball Wednesday Meet Up", location: "Rocky Mountains", budget: 32.50, organizer: user3)
 
-Receipt.create(total: 223.00, store: "Forever21", trip: trip1, purchaser: user1)
-Receipt.create(total: 45.32, store: "Target", trip: trip1, purchaser: user2)
-Receipt.create(total: 342.00, store: "Dick Sporting Goods", trip: trip3, purchaser: user3)
-Receipt.create(total: 123.00, store: "Walmart", trip: trip2, purchaser: user1)
+# Receipt.create(total: 223.00, store: "Forever21", trip: trip1, purchaser: user1)
+# Receipt.create(total: 45.32, store: "Target", trip: trip1, purchaser: user2)
+# Receipt.create(total: 342.00, store: "Dick Sporting Goods", trip: trip3, purchaser: user3)
+# Receipt.create(total: 123.00, store: "Walmart", trip: trip2, purchaser: user1)
 
 
 travelg1 = Travelgrouping.create(trip: trip1, traveller: user1)

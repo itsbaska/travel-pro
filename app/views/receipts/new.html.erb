@@ -1,0 +1,12 @@
+<%= form_for(:receipt, url: receipts_path, html: {multipart: true}) do |f| %>
+  <%= f.label :store %>
+  <%= f.text_field :store %>
+
+  <%= f.label :total %>
+  <%= f.text_field :total %>
+
+  <%= f.label :receipt %>
+  <%= f.file_field :photo %>
+
+  <%= f.submit "Save Receipt" %>
+<% end %>
