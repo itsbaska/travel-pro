@@ -1,9 +1,17 @@
 {
   "name": "travel",
   "private": true,
+  "scripts": {"dev":"rails s && webpack -w"},
   "dependencies": {
     "@rails/webpacker": "^3.0.2",
-    "coffeescript": "1.12.7"
+    "babel-preset-react": "^6.24.1",
+    "caniuse-lite": "^1.0.30000760",
+    "coffeescript": "1.12.7",
+    "prop-types": "^15.6.0",
+    "react": "^16.1.0",
+    "react-dom": "^16.1.0",
+    "react_ujs": "^2.4.1",
+    "webpack": "^3.8.1"
   },
   "devDependencies": {
     "webpack-dev-server": "^2.9.4"
