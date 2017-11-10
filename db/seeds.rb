@@ -33,9 +33,14 @@ travelg6 = Travelgrouping.create(trip: trip3, traveller: user2)
 Outbound.create(airline: "Southwest", arrival: DateTime.strptime("11/25/2017 17:00", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("12/5/2017 11:00", "%m/%d/%Y %H:%M"), airport: "Midway", travelgrouping: travelg1)
 Outbound.create(airline: "Southwest", arrival: DateTime.strptime("11/17/2017 17:00", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("12/1/2017 11:00", "%m/%d/%Y %H:%M"), airport: "Midway", travelgrouping: travelg3)
 Outbound.create(airline: "Southwest", arrival: DateTime.strptime("11/23/2017 12:00", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("12/10/2017 15:00", "%m/%d/%Y %H:%M"), airport: "Midway", travelgrouping: travelg2)
+Outbound.create(airline: "Southwest", arrival: DateTime.strptime("11/19/2017 17:00", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("12/12/2017 11:00", "%m/%d/%Y %H:%M"), airport: "Midway", travelgrouping: travelg4)
+Outbound.create(airline: "Southwest", arrival: DateTime.strptime("11/19/2017 17:00", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("12/12/2017 11:00", "%m/%d/%Y %H:%M"), airport: "Midway", travelgrouping: travelg5)
+Outbound.create(airline: "Southwest", arrival: DateTime.strptime("11/14/2017 17:00", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("12/10/2017 11:00", "%m/%d/%Y %H:%M"), airport: "Midway", travelgrouping: travelg6)
 
 Inbound.create(airline: "Paris Airlines", arrival: DateTime.strptime("11/25/2017 21:00", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("12/5/2017 16:00", "%m/%d/%Y %H:%M"), airport: "Paris airport", travelgrouping: travelg1)
 
 Inbound.create(airline: "Pairs Airlines", arrival: DateTime.strptime("11/23/2017 17:00", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("12/10/2017 21:00", "%m/%d/%Y %H:%M"), airport: "Paris airport", travelgrouping: travelg2)
 
+Inbound.create(airline: "Arizona Airlines", arrival: DateTime.strptime("11/25/2017 23:00", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("12/5/2017 20:00", "%m/%d/%Y %H:%M"), airport: "Arizona  airport", travelgrouping: travelg3)
 
+Inbound.create(airline: "Arizona Airlines", arrival: DateTime.strptime("11/25/2017 20:00", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("12/5/2017 12:00", "%m/%d/%Y %H:%M"), airport: "Arizona  airport", travelgrouping: travelg4)
