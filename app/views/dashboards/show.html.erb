@@ -1,0 +1,10 @@
+<%= javascript_pack_tag 'dashboards_show' %>
+
+<%= content_tag :div,
+  id: "all-trips",
+  data: {
+    trips: @trips,
+    organizer: @organizer,
+    travellers: @travellers
+}.to_json do %>
+<% end %>

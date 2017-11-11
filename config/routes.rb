@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
+  get "/users/:id/dashboards", to: "dashboards#show"
+
 
   root to: "trips#index"
   resources :receipts, only: [:new, :create, :show]
