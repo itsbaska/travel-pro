@@ -6,19 +6,17 @@ class Login extends React.Component {
     return (
       <form className="login-form">
         <h2>Login</h2>
+
         <label htmlFor="email">Email</label>
         <input type="email" name="email"/>
+
         <label htmlFor="password">Password</label>
         <input type="password" name="password"/>
+
         <button type="submit">Login</button>
       </form>
     );
   }
 }
-
-Login.propTypes = {
-  email: PropTypes.string,
-  password: PropTypes.string
-};
 
 export default Login

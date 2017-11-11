@@ -6,11 +6,11 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import HelloWorld from '../components/HelloWorld'
-import Login from '../components/Login'
+
 
 
 const Hello = props => (
-  <div>Hello {props.name}! <HelloWorld/>
+  <div>Hello {props.name}!
     Hello {props.message}!
   </div>
 )

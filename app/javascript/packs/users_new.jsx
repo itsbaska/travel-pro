@@ -1,15 +1,17 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
-import Login from '../components/Login'
+import Register from '../components/Register'
 import NavigationBar from '../components/NavigationBar'
 
 
-const SignIn = props => (
-  <div> <Login/> </div>
+const SignUp = props => (
+  <div>
+    <Register/>
+  </div>
 )
 
 document.addEventListener('DOMContentLoaded', () => {
-  const node = document.getElementById('login-form')
-  ReactDOM.render(<SignIn/>, node)
+  const node = document.getElementById('register-form')
+  ReactDOM.render(<SignUp/>, node)
 })
