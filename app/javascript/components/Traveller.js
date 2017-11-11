@@ -4,7 +4,6 @@ class Traveller extends React.Component {
 render () {
     return (
       <li>
-        {console.log(this.props)}
         <p className="trip-name">{this.props.first_name}</p>
       </li>
     )
