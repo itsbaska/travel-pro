@@ -8,14 +8,11 @@ import PropTypes from 'prop-types'
 import HelloWorld from '../components/HelloWorld'
 import Login from '../components/Login'
 
-const SignIn = props => (
-  <div> <Login/> </div>
-)
 
 const Hello = props => (
   <div>Hello {props.name}! <HelloWorld/>
-  Hello {props.message}! <HelloWorld/> </div>
-
+    Hello {props.message}!
+  </div>
 )
 
 Hello.defaultProps = {
