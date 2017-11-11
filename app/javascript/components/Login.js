@@ -1,15 +1,17 @@
-import React, {Component} from "react"
+import React from "react"
 import PropTypes from "prop-types"
-class Login extends Component {
-  componentDidMount(){
-    console.log(this.props)
-  }
-
-  render() {
+class Login extends React.Component {
+  render () {
+     console.log("hello")
     return (
-      <div>
-        <label>{this.props}</label>
-      </div>
+      <form className="login-form">
+        <h2>Login</h2>
+        <label htmlFor="email">Email</label>
+        <input type="email" name="email"/>
+        <label htmlFor="password">Password</label>
+        <input type="password" name="password"/>
+        <button type="submit">Login</button>
+      </form>
     );
   }
 }
@@ -18,4 +20,5 @@ Login.propTypes = {
   email: PropTypes.string,
   password: PropTypes.string
 };
+
 export default Login
