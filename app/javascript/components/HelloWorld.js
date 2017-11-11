@@ -1,5 +1,6 @@
 import React, {Component} from "react"
 import PropTypes from "prop-types"
+
 class HelloWorld extends Component {
   componentDidMount(){
     console.log(this.props)
@@ -8,7 +9,6 @@ class HelloWorld extends Component {
   render() {
     return (
       <div>
-       required fwegthing
       </div>
     );
   }

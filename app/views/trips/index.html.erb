@@ -2,7 +2,15 @@
 <%= content_tag :div,
   id: "hello-react",
   data: {
-    message: 'Hello!',
+    message: 'Goodbye!',
     name: @user
 }.to_json do %>
 <% end %>
+
+
+  <%= content_tag :div,
+    id: "all-trips",
+    data: {
+      trips: @trips
+  }.to_json do %>
+  <% end %>
