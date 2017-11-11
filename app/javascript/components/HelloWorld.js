@@ -8,7 +8,7 @@ class HelloWorld extends Component {
   render() {
     return (
       <div>
-      something
+        button
       </div>
     );
   }

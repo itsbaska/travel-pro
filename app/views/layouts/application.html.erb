@@ -9,6 +9,10 @@
   </head>
 
   <body>
+    <%= javascript_pack_tag 'navigation' %>
+    <%= content_tag :div,
+      id: "navigation-bar" do %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
