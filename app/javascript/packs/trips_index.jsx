@@ -6,21 +6,19 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import HelloWorld from '../components/HelloWorld'
+import Trips from '../components/Trips'
 
-const Hello = props => (
-  <div>Hello {props.name}! <HelloWorld/> </div>
+
+
+const Trip = props => (
+  <div>
+    <Trips data={props.trips}/>
+  </div>
 )
 
-Hello.defaultProps = {
-  name: 'David'
-}
-
-Hello.propTypes = {
-  name: PropTypes.string
-}
 document.addEventListener('DOMContentLoaded', () => {
-  const node = document.getElementById('hello-react')
-  const data = JSON.parse(node.getAttribute('data'))
+  const node2 = document.getElementById('all-trips')
+  const data2 = JSON.parse(node2.getAttribute('data'))
+  ReactDOM.render(<Trip {...data2}/>, node2)
 
-  ReactDOM.render(<Hello {...data} />, node)
 })
