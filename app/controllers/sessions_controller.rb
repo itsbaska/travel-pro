@@ -5,14 +5,13 @@ class SessionsController < Devise::SessionsController
 
   def create
     @user = User.find_by_email(user_params[:email])
-    return invalid_login_attempt unless @user
+    return invalid_login unless @user
 
     if @user.valid_password?(user_params[:password])
-      p "I AM LOGGED IN"
       sign_in :user, @user
       redirect_to user_dashboard_path(@user)
     else
-      render component: 'Login', props: { errors: "Invalid e-mail or password. Please try again!" }
+      invalid_login
     end
   end
 
@@ -23,10 +22,9 @@ class SessionsController < Devise::SessionsController
 
   private
 
-  # def invalid_login_attempt
-  #   warden.custom_failure!
-  #   render json: {error: 'Invalid e-mail or password'}, status: :unprocessable_entity
-  # end
+  def invalid_login
+     render component: 'Login', props: { errors: "Invalid e-mail or password. Please try again!" }
+  end
 
   def user_params
     params.permit(:email, :password)
