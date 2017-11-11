@@ -12,8 +12,7 @@ class SessionsController < Devise::SessionsController
       sign_in :user, @user
       redirect_to user_dashboard_path(@user)
     else
-      p "I AM NOT LOGGED IN"
-      invalid_login_attempt
+      render component: 'Login', props: { errors: "Invalid e-mail or password. Please try again!" }
     end
   end
 
@@ -24,10 +23,10 @@ class SessionsController < Devise::SessionsController
 
   private
 
-  def invalid_login_attempt
-    warden.custom_failure!
-    render json: {error: 'Invalid login attempt'}, status: :unprocessable_entity
-  end
+  # def invalid_login_attempt
+  #   warden.custom_failure!
+  #   render json: {error: 'Invalid e-mail or password'}, status: :unprocessable_entity
+  # end
 
   def user_params
     params.permit(:email, :password)
