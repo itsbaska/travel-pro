@@ -1,5 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
+import Logout from "./Logout.js"
 
 class NavigationBar extends React.Component {
   constructor(args) {
@@ -31,7 +32,7 @@ class NavigationBar extends React.Component {
         <ul>
           <li><a href='/'>Home</a></li>
           <li><a href={"/users/" + this.state.currentUser.id + "/dashboards"}>Dashboard</a></li>
-          <li>log out</li>
+          <li>< Logout /></li>
         </ul>
       </nav>
       )
