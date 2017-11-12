@@ -5,6 +5,11 @@ class TripsController < ApplicationController
   end
 
   def new
-  	@trip = Trip.new  
-  end 
+    @trip = Trip.new
+  end
+
+  def show
+    @trip = Trip.find(params[:id])
+    @travellers = @trip.travellers
+  end
 end

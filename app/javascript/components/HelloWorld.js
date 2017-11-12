@@ -3,7 +3,6 @@ import PropTypes from "prop-types"
 
 class HelloWorld extends Component {
   componentDidMount(){
-    console.log(this.props)
   }
 
   render() {
