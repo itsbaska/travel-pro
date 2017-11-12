@@ -1,6 +1,7 @@
 class OutboundsController < ApplicationController
 
   def index
+    authenticate!
     @trip = Trip.find(params[:trip_id])
     @outbound_flights = @trip.outbound_flights
   end
@@ -21,7 +22,6 @@ class OutboundsController < ApplicationController
     if @outbound.save
       redirect_to @trip
     else
-      p @outbound.errors.full_messages
       render component: 'NewOutbound', props: {errors: @outbound.errors.full_messages}
     end
   end

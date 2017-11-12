@@ -1,14 +1,17 @@
 class ReceiptsController < ApplicationController
   def index
+    authenticate!
     @trip = Trip.find(params[:trip_id])
     @receipts = @trip.receipts
   end
 
   def new
+    authenticate!
     @trip = Trip.find(params[:trip_id])
   end
 
   def create
+    authenticate!
     @trip = Trip.find(params[:trip_id])
     p receipt_params
     @receipt = Receipt.new(receipt_params)
@@ -20,6 +23,7 @@ class ReceiptsController < ApplicationController
   end
 
   def show
+    authenticate!
     @receipt = Receipt.find(params[:id])
   end
 
