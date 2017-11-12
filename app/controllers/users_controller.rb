@@ -1,4 +1,4 @@
-class UsersController < Devise::RegistrationsController
+class UsersController < ApplicationController
   def new
     @user = User.new
   end
@@ -6,6 +6,7 @@ class UsersController < Devise::RegistrationsController
   def create
     @user = User.new(user_params)
     if @user.save
+      session[:user_id] = @user.id
       redirect_to user_dashboard_path(@user)
     else
       invalid_register(@user)

@@ -1,9 +1,27 @@
 class ApplicationController < ActionController::Base
-  before_action :configure_permitted_parameters, if: :devise_controller?
-
-  protected
-
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:email])
+  def current_user
+    return unless session[:user_id]
+    @current_user ||= User.find(session[:user_id])
   end
+  helper_method :current_user
+
+  def logged_in?
+    session[:user_id] != nil
+  end
+  helper_method :logged_in?
+
+  def authenticate!
+    redirect '/login' unless logged_in?
+  end
+  helper_method :authenticate!
+
+  def authorize!(user)
+    redirect_to '/not_authorized' unless authorized?(user)
+  end
+  helper_method :authorize!
+
+  def authorized?(user)
+    current_user == user
+  end
+  helper_method :authorized?
 end
