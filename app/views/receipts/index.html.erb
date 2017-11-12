@@ -1,0 +1,8 @@
+<%= javascript_pack_tag 'receipts_index' %>
+
+<%= content_tag :div,
+  id: "all-receipts",
+  data: {
+    receipts: @receipts
+}.to_json do %>
+<% end %>
