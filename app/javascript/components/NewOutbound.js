@@ -1,28 +1,88 @@
 import React from "react"
 import PropTypes from "prop-types"
+import $ from 'jquery'
 
 class NewOutbound extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      airline: '',
+      airport: '',
+      arrival: '',
+      depature: '',
+      trip: props.data,
+      errors: props.errors || ''
+    }
+    console.log(this.state.errors)
+    this.handleNewOutboundChange = this.handleNewOutboundChange.bind(this)
+    this.handleNewOutboundSubmit = this.handleNewOutboundSubmit.bind(this)
+  }
+
+  handleNewOutboundChange(input) {
+    this.setState({value: input})
+  }
+
+
+  handleNewOutboundSubmit(){
+    var form = new FormData(document.getElementById('outbound-new-form'))
+    fetch("http://localhost:3000/trips/"+ this.state.trip.id +"/outbounds/new", {
+      method: "POST",
+      headers: {'X-CSRF-Token': token},
+      body: form
+    }).then((response) => response.json())
+  }
+
   render () {
-    return (
-      <form className="outbound-new-form">
-        <h2>Add Booking Info</h2>
-        <h4>Outbound</h4>
+    const token = $('meta[name="csrf-token"]').attr('content');
 
-        <label htmlFor="airport">Airport:</label>
-        <input type="text" name="airport"/>
+    if (this.state.errors.length > 0 ) {
+      return (
+        <div>
+        <h1>{this.state.errors}</h1>
+        <form className="outbound-new-form" method="post" action={"/trips/" + this.state.trip.id + "/outbounds"} onSubmit={this.handleNewOutboundSubmit}>
+        <input type="hidden" name="authenticity_token" value={token} readOnly={true} />
+          <h2>Add Booking Info</h2>
+          <h4>Outbound</h4>
 
-        <label htmlFor="airline">Airline:</label>
-        <input type="text" name="airline"/>
+          <label htmlFor="airport">Airport:</label>
+          <input type="text" name="airport" onChange={this.handleNewOutboundChange} />
 
-        <label htmlFor="arrival">Arrival:</label>
-        <input type="datetime-local" name="arrival"/>
+          <label htmlFor="airline">Airline:</label>
+          <input type="text" name="airline" onChange={this.handleNewOutboundChange} />
 
-        <label htmlFor="departure">Departure:</label>
-        <input type="datetime-local" name="departure"/>
+          <label htmlFor="arrival">Arrival:</label>
+          <input type="datetime-local" name="arrival" onChange={this.handleNewOutboundChange} />
 
-        <a href="/">Save</a>
-      </form>
-    );
+          <label htmlFor="departure">Departure:</label>
+          <input type="datetime-local" name="departure" onChange={this.handleNewOutboundChange} />
+
+           <input type="submit" value="Save" />
+        </form>
+        </div>
+      );
+    } else {
+      return (
+        <form className="outbound-new-form" method="post" action={"/trips/" + this.state.trip.id + "/outbounds"} onSubmit={this.handleNewOutboundSubmit}>
+        <input type="hidden" name="authenticity_token" value={token} readOnly={true} />
+          <h2>Add Booking Info</h2>
+          <h4>Outbound</h4>
+
+          <label htmlFor="airport">Airport:</label>
+          <input type="text" name="airport" onChange={this.handleNewOutboundChange} />
+
+          <label htmlFor="airline">Airline:</label>
+          <input type="text" name="airline" onChange={this.handleNewOutboundChange} />
+
+          <label htmlFor="arrival">Arrival:</label>
+          <input type="datetime-local" name="arrival" onChange={this.handleNewOutboundChange} />
+
+          <label htmlFor="departure">Departure:</label>
+          <input type="datetime-local" name="departure" onChange={this.handleNewOutboundChange} />
+
+           <input type="submit" value="Save" />
+        </form>
+      );
+    }
   }
 }
 
