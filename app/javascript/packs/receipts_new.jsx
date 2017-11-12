@@ -2,16 +2,16 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import ReceiptForm from '../components/ReceiptForm'
-import NavigationBar from '../components/NavigationBar'
 
 
 const SignUp = props => (
   <div>
-    <ReceiptForm/>
+    <ReceiptForm data={props}/>
   </div>
 )
 
 document.addEventListener('DOMContentLoaded', () => {
   const node = document.getElementById('receipt-form')
-  ReactDOM.render(<ReceiptForm/>, node)
+  const data = JSON.parse(node.getAttribute('data'))
+  ReactDOM.render(<ReceiptForm {...data}/>, node)
 })

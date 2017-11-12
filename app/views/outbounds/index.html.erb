@@ -1,0 +1,8 @@
+<%= javascript_pack_tag 'outbounds_index' %>
+<%= content_tag :div,
+  id: "outbound-flights-container",
+  data: {
+    trip: @trip,
+    outboundFlights: @outbound_flights
+  }.to_json do %>
+<% end %>

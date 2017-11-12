@@ -1,16 +1,16 @@
 Rails.application.routes.draw do
   resources :trips do
-    resources :receipts, only: [:new, :create, :show]
+    resources :receipts, only: [:index, :new, :create]
   end
 
   get '/users/sign_up', to: 'users#new', as: 'new_user'
   post '/users', to: 'users#create'
   get '/users/:id', to: 'users#show', as: 'user'
-  
-  resources :trips do 
-    resources :outbounds 
-    resources :inbounds 
-  end 
+
+  resources :trips do
+    resources :outbounds
+    resources :inbounds
+  end
 
   get "/login", to: "sessions#new"
   post "/sessions", to: "sessions#create"
