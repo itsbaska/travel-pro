@@ -1,4 +1,7 @@
 <%= javascript_pack_tag 'receipts_new' %>
 <%= content_tag :div,
-  id: "receipt-form" do %>
+  id: "receipt-form",
+  data: {
+    trip: @trip
+  }.to_json do %>
 <% end %>
