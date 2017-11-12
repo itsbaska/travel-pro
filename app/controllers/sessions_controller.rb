@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
 
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
+
       redirect_to user_dashboard_path(@user)
     else
       invalid_login
@@ -17,7 +18,8 @@ class SessionsController < ApplicationController
 
   def destroy
     session.delete(:user_id)
-    render json: {success: true}
+    p "trying to logout here"
+    redirect_to root_path
   end
 
   private
