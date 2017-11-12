@@ -21,9 +21,12 @@ class Trips extends React.Component {
 
   render () {
     return (
-      <ul>
-        {this.state.trips}
-      </ul>
+      <div>
+        <ul>
+          {this.state.trips}
+        </ul>
+          <a href="/trips/new"><button>Create Trip</button></a>
+      </div>
     );
   }
 }
