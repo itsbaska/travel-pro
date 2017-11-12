@@ -2,7 +2,7 @@ class InboundsController < ApplicationController
 
   def index
     @trip = Trip.find(params[:trip_id])
-    @inbound_flight = @trip.inbound_flights
+    @inbound_flights = @trip.inbound_flights
   end
 
   def new
