@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
+      WelcomeMailer.welcome_email(@user).deliver
       redirect_to user_dashboard_path(@user)
     else
       invalid_register(@user)
