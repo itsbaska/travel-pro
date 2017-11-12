@@ -1,4 +1,10 @@
 class OutboundsController < ApplicationController
+
+  def index
+    @trip = Trip.find(params[:trip_id])
+    @outbound_flights = @trip.outbound_flights
+  end
+
   def new
     authenticate!
     @trip = Trip.find(params[:trip_id])

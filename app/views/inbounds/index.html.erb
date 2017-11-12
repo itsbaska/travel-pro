@@ -1,0 +1,8 @@
+<%= javascript_pack_tag 'inbounds_new' %>
+<%= content_tag :div,
+  id: "inbound-flights-container",
+  data: {
+    trip: @trip,
+    inbound_flight: @inbound_flight
+  }.to_json do %>
+<% end %>
