@@ -2,7 +2,10 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {registrations: 'users', sessions: 'sessions'}
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :trips
+  resources :trips do 
+    resources :outbounds 
+    resources :inbounds 
+  end 
 
   # get "/register", to: "users#new"
   # post "/users", to: "users#create"
