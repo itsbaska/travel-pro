@@ -7,11 +7,12 @@ import NavigationBar from '../components/NavigationBar'
 
 const OutboundNew = props => (
   <div>
-    <NewOutbound/>
+    <NewOutbound data={props.trip} />
   </div>
 )
 
 document.addEventListener('DOMContentLoaded', () => {
   const node = document.getElementById('outbound-new-form')
-  ReactDOM.render(<OutboundNew/>, node)
+  const data = JSON.parse(node.getAttribute('data'))
+  ReactDOM.render(<OutboundNew {...data}/>, node)
 })
