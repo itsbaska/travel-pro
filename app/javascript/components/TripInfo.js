@@ -26,7 +26,8 @@ class TripInfo extends React.Component {
         <h3>{this.state.trip.name}</h3>
         <p>Location: {this.state.trip.location}</p>
         <h4>Travellers</h4>
-        {this.state.travellers}
+          {this.state.travellers}
+        <a href={"/trips/" + this.state.trip.id + "/receipts/new" }><button>Add Receipt</button></a>
       </ul>
     );
   }
