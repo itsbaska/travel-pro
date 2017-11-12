@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :trips
+  resources :trips do
+    resources :receipts, only: [:new, :create, :show]
+  end
+
+
   get '/users/sign_up', to: 'users#new', as: 'new_user'
   post '/users', to: 'users#create'
   get '/users/:id', to: 'users#show', as: 'user'
@@ -10,5 +14,4 @@ Rails.application.routes.draw do
   get "/users/:id/dashboards", to: "dashboards#show", as: 'user_dashboard'
 
   root to: "trips#index"
-  resources :receipts, only: [:new, :create, :show]
 end
