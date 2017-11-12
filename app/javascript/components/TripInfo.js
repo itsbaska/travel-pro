@@ -33,6 +33,11 @@ class TripInfo extends React.Component {
 
       <a href={"/trips/" + this.state.trip.id + "/outbounds/new"}><button>Add Outbound Info</button></a>
       <a href={"/trips/" + this.state.trip.id + "/inbounds/new"}><button>Add Inbound Info</button></a>
+
+      <a href={"/trips/" + this.state.trip.id + "/outbounds"}><button>All Outbound Trips</button></a>
+      <a href={"/trips/" + this.state.trip.id + "/inbounds"}><button>All Inbound Trips</button></a>
+
+
       </div>
     );
   }

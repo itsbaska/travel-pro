@@ -1,4 +1,7 @@
 <%= javascript_pack_tag 'inbounds_new' %>
 <%= content_tag :div,
-  id: "inbound-new-form" do %>
+  id: "inbound-new-form",
+  data: {
+    trip: @trip
+  }.to_json do %>
 <% end %>
