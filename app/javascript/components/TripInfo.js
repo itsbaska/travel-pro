@@ -22,12 +22,17 @@ class TripInfo extends React.Component {
 
   render () {
     return (
+      <div> 
       <ul>
         <h3>{this.state.trip.name}</h3>
         <p>Location: {this.state.trip.location}</p>
         <h4>Travellers</h4>
         {this.state.travellers}
       </ul>
+    
+      <a href={"/trips/" + this.state.trip.id + "/outbounds/new"}><button>Add Outbound Info</button></a>
+      <a href={"/trips/" + this.state.trip.id + "/inbounds/new"}><button>Add Inbound Info</button></a>
+      </div> 
     );
   }
 }
