@@ -35,7 +35,7 @@ class ReceiptForm extends React.Component {
       return (
         <div>
         <h1>{this.state.errors}</h1>
-        <form className="receipt-form" method="post" action={"/trips/" + this.props.trip.id + "/receipts"} onSubmit={this.handleReceiptForm}>
+        <form className="receipt-form" method="post" action={"/trips/" + this.props.trip.id + "/receipts"} onSubmit={this.handleReceiptForm} encType="multipart/form-data">
           <h2>Add a Receipt</h2>
           <input type="hidden" name="authenticity_token" value={token} readOnly={true} />
 
@@ -54,7 +54,7 @@ class ReceiptForm extends React.Component {
       );
     } else {
       return (
-        <form className="receipt-form" method="post" action={"/trips/" + this.props.trip.id + "/receipts"} onSubmit={this.handleReceiptForm}>
+        <form className="receipt-form" method="post" action={"/trips/" + this.props.trip.id + "/receipts"} onSubmit={this.handleReceiptForm} encType="multipart/form-data">
             <h2>Add a Receipt</h2>
             <input type="hidden" name="authenticity_token" value={token} readOnly={true} />
 
