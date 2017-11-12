@@ -5,12 +5,13 @@ class NavigationBar extends React.Component {
   constructor(args) {
     super(args)
     this.state = {
-      loggedIn: ""
+      loggedIn: "",
+      currentUser: ""
     }
   }
 
   componentDidMount() {
-    this.setState({loggedIn: this.props.data.loggedIn})
+    this.setState({loggedIn: this.props.data.loggedIn, currentUser: this.props.data.currentUser})
   }
 
   render () {
@@ -29,8 +30,7 @@ class NavigationBar extends React.Component {
       <nav>
         <ul>
           <li><a href='/'>Home</a></li>
-        {/* hard coded user id*/}
-          <li><a href={'/users/1/dashboards'}>Dashboard</a></li>
+          <li><a href={"/users/" + this.state.currentUser.id + "/dashboards"}>Dashboard</a></li>
           <li>log out</li>
         </ul>
       </nav>

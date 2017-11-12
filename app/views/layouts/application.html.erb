@@ -14,7 +14,8 @@
       <%= content_tag :div,
         id: "navigation-bar",
         data: {
-          loggedIn: logged_in?
+          loggedIn: logged_in?,
+          currentUser: current_user
         }.to_json do %>
       <% end %>
     <%= yield %>
