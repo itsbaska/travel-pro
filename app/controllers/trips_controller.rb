@@ -9,7 +9,6 @@ class TripsController < ApplicationController
 
    def create
     authenticate!
-
     @trip = Trip.new(trip_params)
 
     if @trip.save
@@ -20,6 +19,7 @@ class TripsController < ApplicationController
   end
 
   def show
+    authenticate!
     @trip = Trip.find(params[:id])
     @travellers = @trip.travellers
   end
