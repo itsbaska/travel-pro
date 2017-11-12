@@ -31,7 +31,7 @@ class ReceiptForm extends React.Component {
   }
 
   render () {
-    console.log(this)
+    {/* FIXME */}
     return (
     <form className="receipt-form" method="post" action={"/trips/" + 1 + "/receipts"} onSubmit={this.handleReceiptForm}>
         <h1>{this.state.errors}</h1>
