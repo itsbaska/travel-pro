@@ -1,7 +1,9 @@
 {
   "name": "travel",
   "private": true,
-  "scripts": {"dev":"rails s && webpack -w"},
+  "scripts": {
+    "dev": "rails s && webpack -w"
+  },
   "dependencies": {
     "@rails/webpacker": "^3.0.2",
     "babel-preset-react": "^6.24.1",
