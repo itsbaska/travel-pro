@@ -3,9 +3,8 @@ class ReceiptsController < ApplicationController
   end
 
   def create
+    @trip = Trip.find(params[:trip_id])
     @receipt = Receipt.new(receipt_params)
-    @receipt.purchaser_id = 1
-    @receipt.trip_id = 1
     if @receipt.save
       redirect_to receipt_path(@receipt)
     else
@@ -19,6 +18,6 @@ class ReceiptsController < ApplicationController
 
   private
   def receipt_params
-    params.require(:receipt).permit(:total, :store, :photo)
+    params.require(:receipt).permit(:total, :store, :photo).merge(purchaser: current_user, trip: @trip)
   end
 end
