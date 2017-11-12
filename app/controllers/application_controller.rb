@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  
+
   def current_user
     return unless session[:user_id]
     @current_user ||= User.find(session[:user_id])
@@ -11,7 +13,7 @@ class ApplicationController < ActionController::Base
   helper_method :logged_in?
 
   def authenticate!
-    redirect '/login' unless logged_in?
+      return redirect_to '/login' unless logged_in?
   end
   helper_method :authenticate!
 
