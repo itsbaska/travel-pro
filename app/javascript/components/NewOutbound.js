@@ -20,7 +20,7 @@ class NewOutbound extends React.Component {
         <label htmlFor="departure">Departure:</label>
         <input type="datetime-local" name="departure"/>
 
-        <a href={"/trip/ + @trip.id + /inbounds"}>Add Inbound Info</a> 
+        <a href="/">Save</a>
       </form>
     );
   }

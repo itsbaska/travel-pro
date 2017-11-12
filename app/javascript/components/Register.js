@@ -4,7 +4,6 @@ import PropTypes from "prop-types"
 class Register extends React.Component {
   constructor(props) {
     super(props)
-    console.log(props)
       this.state = {
         first_name: '',
         last_name: '',
@@ -23,7 +22,6 @@ class Register extends React.Component {
   }
 
   handleRegisterForm() {
-    var self = this
     var form = new FormData(document.getElementById('register-form'))
     fetch("http://localhost:3000/users/sign_up", {
       method: "POST",
