@@ -7,10 +7,9 @@
 }.to_json do %>
 <% end %>
 
-
-  <%= content_tag :div,
-    id: "all-trips",
-    data: {
-      trips: @trips
-  }.to_json do %>
-  <% end %>
+<%= content_tag :div,
+  id: "all-trips",
+  data: {
+    trips: @trips
+}.to_json do %>
+<% end %>

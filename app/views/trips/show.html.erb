@@ -1,0 +1,9 @@
+<%= javascript_pack_tag 'trips_show' %>
+
+<%= content_tag :div,
+  id: "trip-info",
+  data: {
+    trip: @trip,
+    travellers: @travellers
+}.to_json do %>
+<% end %>
