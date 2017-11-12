@@ -21,7 +21,7 @@ class Login extends React.Component {
   handleLoginForm() {
     var self = this
     var form = new FormData(document.getElementById('login-form'))
-    fetch('http://localhost:3000/users/sign_in', {
+    fetch('http://localhost:3000/login', {
       method: "POST",
       headers: {'X-CSRF-Token': token
       },
@@ -34,7 +34,7 @@ class Login extends React.Component {
       return (
         <div>
         <h1>{this.state.error}</h1>
-        <form className="login-form" onSubmit={this.handleLoginForm} method="post">
+        <form className="login-form" onSubmit={this.handleLoginForm} method="post" action="/sessions">
           <h2>Login</h2>
 
           <label htmlFor="email">Email</label>
@@ -49,7 +49,7 @@ class Login extends React.Component {
         )
       } else {
         return (
-        <form className="login-form" onSubmit={this.handleLoginForm} method="post">
+        <form className="login-form" onSubmit={this.handleLoginForm} method="post" action="/sessions">
           <h2>Login</h2>
 
           <label htmlFor="email">Email</label>

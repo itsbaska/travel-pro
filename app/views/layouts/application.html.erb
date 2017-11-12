@@ -9,10 +9,14 @@
   </head>
 
   <body>
-    <%= javascript_pack_tag 'navigation' %>
-    <%= content_tag :div,
-      id: "navigation-bar" do %>
-    <% end %>
+    <% p logged_in? %>
+      <%= javascript_pack_tag 'navigation' %>
+      <%= content_tag :div,
+        id: "navigation-bar",
+        data: {
+          loggedIn: logged_in?
+        }.to_json do %>
+      <% end %>
     <%= yield %>
   </body>
 </html>

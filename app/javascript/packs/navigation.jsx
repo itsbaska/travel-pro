@@ -5,11 +5,12 @@ import NavigationBar from '../components/NavigationBar'
 
 const Navigation = props => (
   <div>
-    <NavigationBar/>
+    <NavigationBar data={props}/>
   </div>
 )
 
 document.addEventListener('DOMContentLoaded', () => {
   const node = document.getElementById('navigation-bar')
-  ReactDOM.render(<Navigation/>, node)
+  const data = JSON.parse(node.getAttribute('data'))
+  ReactDOM.render(<Navigation {...data}/>, node)
 })

@@ -1,4 +1,4 @@
-class SessionsController < Devise::SessionsController
+class SessionsController < ApplicationController
   def new
     @user = User.new
   end
@@ -7,8 +7,8 @@ class SessionsController < Devise::SessionsController
     @user = User.find_by_email(user_params[:email])
     return invalid_login unless @user
 
-    if @user.valid_password?(user_params[:password])
-      sign_in :user, @user
+    if @user && @user.authenticate(params[:password])
+      session[:user_id] = @user.id
       redirect_to user_dashboard_path(@user)
     else
       invalid_login
@@ -16,7 +16,7 @@ class SessionsController < Devise::SessionsController
   end
 
   def destroy
-    sign_out(@user)
+    session.delete(:user_id)
     render json: {success: true}
   end
 
