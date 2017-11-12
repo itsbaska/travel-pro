@@ -19,7 +19,7 @@ class Login extends React.Component {
   }
 
   handleLoginForm() {
-    var self = this
+
     var form = new FormData(document.getElementById('login-form'))
     fetch('http://localhost:3000/login', {
       method: "POST",

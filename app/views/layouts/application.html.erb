@@ -9,7 +9,7 @@
   </head>
 
   <body>
-    <% p logged_in? %>
+    <% p session[:user_id] != nil %>
       <%= javascript_pack_tag 'navigation' %>
       <%= content_tag :div,
         id: "navigation-bar",
