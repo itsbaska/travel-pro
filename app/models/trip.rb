@@ -2,7 +2,7 @@ class Trip < ApplicationRecord
   has_many :travelgroupings
   has_many :receipts
   belongs_to :organizer, class_name: "User"
-  has_many :travellers, through: :travelgroupings, source: :traveller
+  has_many :travellers,  -> { distinct }, through: :travelgroupings, source: :traveller
   has_many :inbound_flights, through: :travelgroupings, source: :inbounds
   has_many :outbound_flights, through: :travelgroupings, source: :outbounds
 
