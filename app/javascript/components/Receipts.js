@@ -6,7 +6,8 @@ class Receipts extends React.Component {
     constructor(args) {
     super(args)
     this.state = {
-      receipts: []
+      receipts: [],
+      urls: []
     }
   }
 

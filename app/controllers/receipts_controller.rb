@@ -13,10 +13,9 @@ class ReceiptsController < ApplicationController
   def create
     authenticate!
     @trip = Trip.find(params[:trip_id])
-    p receipt_params
     @receipt = Receipt.new(receipt_params)
     if @receipt.save
-      redirect_to trip_receipt_path(@receipt)
+      redirect_to trip_receipts_path(@trip)
     else
       render action: "new"
     end

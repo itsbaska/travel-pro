@@ -1,14 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
-import HelloWorld from '../components/HelloWorld'
 import Receipts from '../components/Receipts'
 
 
 
 const ReceiptIndex = props => (
   <div>
-    <Receipts data={props.receipts}/>
+    <Receipts data={props.receipts} key={props.id}/>
   </div>
 )
 

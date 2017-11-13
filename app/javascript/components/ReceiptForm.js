@@ -1,5 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
+import $ from 'jquery'
 
 class ReceiptForm extends React.Component {
   constructor(props) {
@@ -19,7 +20,6 @@ class ReceiptForm extends React.Component {
   }
 
   handleReceiptForm() {
-    var self = this
     var form = new FormData(document.getElementById('receipt-form'))
     fetch("http://localhost:3000/receipts/new", {
       method: "POST",
