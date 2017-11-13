@@ -9,9 +9,15 @@ class Logout extends React.Component {
 
   handleLogoutForm(event) {
     event.preventDefault()
+    this.props.setNothing()
     console.log("logout")
     fetch('http://localhost:3000/logout', {
+      url: 'http://localhost:3000/logout',
       method: "DELETE"
+    }).then(data => {
+      console.log(data.blob())
+    }).then(thing => {
+      console.log(thing)
     })
   }
 

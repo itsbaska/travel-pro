@@ -1,6 +1,7 @@
+/* global window document */
+
 import React from "react"
 import PropTypes from "prop-types"
-import $ from 'jquery'
 
 class NewTrip extends React.Component {
    constructor(props) {
@@ -9,11 +10,17 @@ class NewTrip extends React.Component {
       name: '',
       location: '',
       budget: '',
-      errors: props.errors || ''
+      errors: props.errors || '',
+      token: ''
     }
 
   this.handleNewTripChange = this.handleNewTripChange.bind(this)
   this.handleNewTripSubmit = this.handleNewTripSubmit.bind(this)
+  }
+
+  componentDidMount(){
+    const tokenGuyyyy = document.getElementsByTagName('meta')[1].content
+    this.setState({token:tokenGuyyyy})
   }
 
   handleNewTripChange(input) {
@@ -31,7 +38,6 @@ class NewTrip extends React.Component {
   }
 
   render () {
-    const token = $('meta[name="csrf-token"]').attr('content');
 
     if (this.state.errors.length > 0){
       return (
@@ -39,7 +45,7 @@ class NewTrip extends React.Component {
         <h1>{this.state.errors}</h1>
         <form className="trip-new-form" method="post" action="/trips" onSubmit={this.handleNewTripSubmit}>
           <h2>Create New Trip</h2>
-          <input type="hidden" name="authenticity_token" value={token} readOnly={true} />
+          <input type="hidden" name="authenticity_token" value={this.state.token} readOnly={true} />
           <label htmlFor="name">Name:</label>
           <input type="text" name="name" onChange={this.handleNewTripChange}/>
 
@@ -57,7 +63,7 @@ class NewTrip extends React.Component {
       return (
         <form className="trip-new-form" method="post" action="/trips" onSubmit={this.handleNewTripSubmit}>
           <h2>Create New Trip</h2>
-          <input type="hidden" name="authenticity_token" value={token} readOnly={true} />
+          <input type="hidden" name="authenticity_token" value={this.state.token} readOnly={true} />
           <label htmlFor="name">Name:</label>
           <input type="text" name="name" onChange={this.handleNewTripChange}/>
 

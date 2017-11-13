@@ -4,15 +4,28 @@ import Logout from "./Logout.js"
 
 class NavigationBar extends React.Component {
   constructor(args) {
+
     super(args)
     this.state = {
-      loggedIn: "",
+      loggedIn: false,
       currentUser: ""
     }
+    this.setNothing = this.setNothing.bind(this)
+  }
+
+  setNothing() {
+    this.setState({loggedIn: false})
   }
 
   componentDidMount() {
+    console.log(this.props)
     this.setState({loggedIn: this.props.data.loggedIn, currentUser: this.props.data.currentUser})
+  }
+
+  componentWillUpdate(props, state){
+    console.log("uppdadartatw")
+    console.log("props", props)
+    console.log("state", state)
   }
 
   render () {
@@ -32,7 +45,7 @@ class NavigationBar extends React.Component {
         <ul>
           <li><a href='/'>Home</a></li>
           <li><a href={"/users/" + this.state.currentUser.id + "/dashboards"}>Dashboard</a></li>
-          <li>< Logout /></li>
+          <li>< Logout setNothing={this.setNothing}/></li>
         </ul>
       </nav>
       )
