@@ -1,5 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
+import Errors from "./Errors.js"
+
 
 class NewInbound extends React.Component {
   constructor(props) {
@@ -40,11 +42,12 @@ class NewInbound extends React.Component {
     if (this.state.errors.length > 0 ) {
       return (
        <div>
-        <h1>{this.state.errors}</h1>
+
         <form className="inbound-new-form" method="post" action={"/trips/" + this.state.trip.id + "/inbounds"} onSubmit={this.handleNewInboundSubmit}>
         <input type="hidden" name="authenticity_token" value={this.state.token} readOnly={true} />
 
           <h2>Add Booking Info</h2>
+          <Errors>{this.state.errors}</Errors>
           <h4>Inbound</h4>
 
           <label htmlFor="airport">Airport:</label>

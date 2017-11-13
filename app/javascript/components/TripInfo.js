@@ -29,7 +29,6 @@ class TripInfo extends React.Component {
       chartData:{
         labels: this.props.totals,
 
-        [[10,20,30]]
         datasets:[
           {
             label: "Total",
