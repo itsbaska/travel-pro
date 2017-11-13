@@ -2,13 +2,38 @@ import React from "react"
 import PropTypes from "prop-types"
 import Traveller from "./Traveller.js"
 
+import Chart from './Chart.js'
+
 class TripInfo extends React.Component {
   constructor(args) {
     super(args)
     this.state = {
       trip: [],
-      travellers: []
+      travellers: [],
+      chartData: {}
     }
+  }
+
+  componentWillMount() {
+    this.getChartData()
+  }
+
+  getChartData() {
+    this.setState({
+      chartData:{
+        labels: ['budget', 'expense'],
+        datasets:[
+          {
+            label: "Total",
+            data: [200, 350],
+            backgroundColor: [
+              'rgba(255, 99, 132, 0.6)',
+              'rgba(54, 162, 235, 0.6)'
+            ]
+          }
+        ]
+      }
+    })
   }
 
   componentDidMount() {
@@ -28,6 +53,9 @@ class TripInfo extends React.Component {
         <p>Location: {this.state.trip.location}</p>
         <h4>Travellers</h4>
           {this.state.travellers}
+
+          <Chart chartData={this.state.chartData} location={this.state.trip.location} legendPosition="bottom" />
+
         <a href={"/trips/" + this.state.trip.id + "/receipts/new" }><button>Add Receipt</button></a>
       </ul>
 
