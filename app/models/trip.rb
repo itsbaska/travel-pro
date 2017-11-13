@@ -8,4 +8,6 @@ class Trip < ApplicationRecord
 
   validates :name, :location, :budget, presence: true
   validates_numericality_of :budget, :greater_than => 0
+
+
 end
