@@ -7,7 +7,7 @@ import Receipts from '../components/Receipts'
 
 const ReceiptIndex = props => (
   <div>
-    <Receipts data={props.receipts}/>
+    <Receipts data={props.receipts} key={props.id}/>
   </div>
 )
 

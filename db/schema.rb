@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20171110220450) do
     t.string "store", null: false
     t.integer "trip_id"
     t.integer "purchaser_id"
+    t.string "photo_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "photo_file_name"
