@@ -14,7 +14,7 @@ class NewInbound extends React.Component {
       trip: props.data,
       errors: props.errors || ''
     }
-    console.log(this.state.errors)
+
     this.handleNewInboundChange = this.handleNewInboundChange.bind(this)
     this.handleNewInboundSubmit = this.handleNewInboundSubmit.bind(this)
   }
