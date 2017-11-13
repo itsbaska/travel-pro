@@ -21,11 +21,12 @@ class TripInfo extends React.Component {
   getChartData() {
     this.setState({
       chartData:{
-        labels: ['budget', 'expense'],
+        labels: ['expense', 'budget'],
         datasets:[
           {
             label: "Total",
-            data: [200, 350],
+
+            data: [1, this.props.data.trip.budget],
             backgroundColor: [
               'rgba(255, 99, 132, 0.6)',
               'rgba(54, 162, 235, 0.6)'

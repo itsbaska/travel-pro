@@ -26,7 +26,7 @@ class Chart extends React.Component {
           options={{
             title:{
               display: this.props.displayTitle,
-              text: "Largest City" + this.props.location,
+              text: "Trip in " + this.props.location,
               fontSize: 25
             },
             legend:{
