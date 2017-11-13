@@ -11,7 +11,7 @@ class Receipt < ApplicationRecord
   validates_numericality_of :total, :greater_than => 0
 
   def receipt_purchaser
-    self.purchaser_name = self.purchaser.first_name
+    self.purchaser_name = self.purchaser.full_name
   end
 
   def receipt_photo_url
