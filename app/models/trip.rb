@@ -7,6 +7,7 @@ class Trip < ApplicationRecord
   has_many :outbound_flights, through: :travelgroupings, source: :outbounds
   validates :name, :location, :budget, presence: true
   validates_numericality_of :budget, :greater_than => 0
+
   before_save :organizer_person, :start_date_format, :end_date_format
 
   def organizer_person
@@ -20,4 +21,5 @@ class Trip < ApplicationRecord
   def end_date_format
     self.end_date_formatted = self.end_date.strftime('%a, %b. %d, %Y')
   end
+
 end
