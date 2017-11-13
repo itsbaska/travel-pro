@@ -1,6 +1,5 @@
 import React from "react"
 import PropTypes from "prop-types"
-import $ from 'jquery'
 
 class ReceiptForm extends React.Component {
   constructor(props) {
@@ -8,6 +7,7 @@ class ReceiptForm extends React.Component {
       this.state = {
         store: '',
         total: '',
+        token: '',
         errors: props.errors || ""
       }
 
@@ -17,6 +17,11 @@ class ReceiptForm extends React.Component {
 
   handleReceiptChange(input) {
     this.setState({value: input})
+  }
+
+  componentDidMount(){
+    const tokenGuyyyy = document.getElementsByTagName('meta')[1].content
+    this.setState({token:tokenGuyyyy})
   }
 
   handleReceiptForm() {
@@ -30,14 +35,13 @@ class ReceiptForm extends React.Component {
   }
 
   render () {
-    const token = $('meta[name="csrf-token"]').attr('content');
     if (this.state.errors.length > 0){
       return (
         <div>
         <h1>{this.state.errors}</h1>
         <form className="receipt-form" method="post" action={"/trips/" + this.props.trip.id + "/receipts"} onSubmit={this.handleReceiptForm} encType="multipart/form-data">
           <h2>Add a Receipt</h2>
-          <input type="hidden" name="authenticity_token" value={token} readOnly={true} />
+          <input type="hidden" name="authenticity_token" value={this.state.token} readOnly={true} />
 
           <label htmlFor="store">Store</label>
           <input type="text" name="store" onChange={this.handleReceiptChange}/>
@@ -56,7 +60,7 @@ class ReceiptForm extends React.Component {
       return (
         <form className="receipt-form" method="post" action={"/trips/" + this.props.trip.id + "/receipts"} onSubmit={this.handleReceiptForm} encType="multipart/form-data">
             <h2>Add a Receipt</h2>
-            <input type="hidden" name="authenticity_token" value={token} readOnly={true} />
+            <input type="hidden" name="authenticity_token" value={this.state.token} readOnly={true} />
 
             <label htmlFor="store">Store</label>
             <input type="text" name="store" onChange={this.handleReceiptChange}/>

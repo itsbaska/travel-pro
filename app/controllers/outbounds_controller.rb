@@ -22,7 +22,7 @@ class OutboundsController < ApplicationController
     if @outbound.save
       redirect_to @trip
     else
-      render component: 'NewOutbound', props: {errors: @outbound.errors.full_messages}
+      render component: 'NewOutbound', props: {errors: @outbound.errors.full_messages, trip: @trip}
     end
   end
 
