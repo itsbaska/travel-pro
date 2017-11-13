@@ -1,7 +1,5 @@
 import React from "react"
 import PropTypes from "prop-types"
-import $ from 'jquery'
-
 
 class NewInbound extends React.Component {
   constructor(props) {
@@ -11,7 +9,8 @@ class NewInbound extends React.Component {
       airport: '',
       arrival: '',
       depature: '',
-      trip: props.data,
+      trip: props.data || props.trip,
+      token: '',
       errors: props.errors || ''
     }
 
@@ -19,13 +18,18 @@ class NewInbound extends React.Component {
     this.handleNewInboundSubmit = this.handleNewInboundSubmit.bind(this)
   }
 
+  componentDidMount(){
+    const tokenGuyyyy = document.getElementsByTagName('meta')[1].content
+    this.setState({token:tokenGuyyyy})
+  }
+
   handleNewInboundChange(input) {
     this.setState({value: input})
   }
 
   handleNewInboundSubmit(){
-    var form = new FormData(document.getElementById('outbound-new-form'))
-    fetch("http://localhost:3000/trips/"+ this.state.trip.id +"/outbounds/new", {
+    var form = new FormData(document.getElementById('inbound-new-form'))
+    fetch("http://localhost:3000/trips/"+ this.state.trip.id +"/inbounds/new", {
       method: "POST",
       headers: {'X-CSRF-Token': token},
       body: form
@@ -33,12 +37,12 @@ class NewInbound extends React.Component {
   }
 
   render () {
-    const token = $('meta[name="csrf-token"]').attr('content');
-
     if (this.state.errors.length > 0 ) {
       return (
+       <div>
+        <h1>{this.state.errors}</h1>
         <form className="inbound-new-form" method="post" action={"/trips/" + this.state.trip.id + "/inbounds"} onSubmit={this.handleNewInboundSubmit}>
-        <input type="hidden" name="authenticity_token" value={token} readOnly={true} />
+        <input type="hidden" name="authenticity_token" value={this.state.token} readOnly={true} />
 
           <h2>Add Booking Info</h2>
           <h4>Inbound</h4>
@@ -56,12 +60,12 @@ class NewInbound extends React.Component {
           <input type="datetime-local" name="departure" onChange={this.handleNewInboundChange} />
 
            <input type="submit" value="Save" />
-        </form>
+        </form></div>
       );
     } else {
       return (
         <form className="inbound-new-form" method="post" action={"/trips/" + this.state.trip.id + "/inbounds"} onSubmit={this.handleNewInboundSubmit}>
-          <input type="hidden" name="authenticity_token" value={token} readOnly={true} />
+          <input type="hidden" name="authenticity_token" value={this.state.token} readOnly={true} />
 
           <h2>Add Booking Info</h2>
           <h4>Inbound</h4>

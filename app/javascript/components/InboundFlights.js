@@ -11,14 +11,12 @@ class InboundFlights extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.props.data)
     let flightsies = this.props.data.inboundFlights.map((flight) => {
       return (
         <Flight {...flight} key={flight.id} />
       )
     })
     this.setState({inboundFlights: flightsies})
-    console.log(this.state.inboundFlights)
   }
 
   render () {

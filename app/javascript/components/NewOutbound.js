@@ -1,6 +1,5 @@
 import React from "react"
 import PropTypes from "prop-types"
-import $ from 'jquery'
 
 class NewOutbound extends React.Component {
   constructor(props) {
@@ -10,18 +9,23 @@ class NewOutbound extends React.Component {
       airport: '',
       arrival: '',
       depature: '',
-      trip: props.data,
+      trip: props.data || props.trip,
+      token: '',
       errors: props.errors || ''
     }
-    console.log(this.state.errors)
+
     this.handleNewOutboundChange = this.handleNewOutboundChange.bind(this)
     this.handleNewOutboundSubmit = this.handleNewOutboundSubmit.bind(this)
+  }
+
+  componentDidMount(){
+    const tokenGuyyyy = document.getElementsByTagName('meta')[1].content
+    this.setState({token:tokenGuyyyy})
   }
 
   handleNewOutboundChange(input) {
     this.setState({value: input})
   }
-
 
   handleNewOutboundSubmit(){
     var form = new FormData(document.getElementById('outbound-new-form'))
@@ -33,14 +37,13 @@ class NewOutbound extends React.Component {
   }
 
   render () {
-    const token = $('meta[name="csrf-token"]').attr('content');
 
     if (this.state.errors.length > 0 ) {
       return (
         <div>
         <h1>{this.state.errors}</h1>
         <form className="outbound-new-form" method="post" action={"/trips/" + this.state.trip.id + "/outbounds"} onSubmit={this.handleNewOutboundSubmit}>
-        <input type="hidden" name="authenticity_token" value={token} readOnly={true} />
+        <input type="hidden" name="authenticity_token" value={this.state.token} readOnly={true} />
           <h2>Add Booking Info</h2>
           <h4>Outbound</h4>
 
@@ -63,7 +66,7 @@ class NewOutbound extends React.Component {
     } else {
       return (
         <form className="outbound-new-form" method="post" action={"/trips/" + this.state.trip.id + "/outbounds"} onSubmit={this.handleNewOutboundSubmit}>
-        <input type="hidden" name="authenticity_token" value={token} readOnly={true} />
+        <input type="hidden" name="authenticity_token" value={this.state.token} readOnly={true} />
           <h2>Add Booking Info</h2>
           <h4>Outbound</h4>
 

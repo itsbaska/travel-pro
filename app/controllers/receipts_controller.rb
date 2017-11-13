@@ -17,7 +17,7 @@ class ReceiptsController < ApplicationController
     if @receipt.save
       redirect_to trip_receipts_path(@trip)
     else
-      render action: "new"
+      render component: 'ReceiptForm', props: {errors: @receipt.errors.full_messages, trip: @trip}
     end
   end
 
