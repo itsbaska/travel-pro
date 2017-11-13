@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
-  resources :trips do
-    resources :receipts, only: [:index, :new, :create]
-  end
-
+  
   get '/users/sign_up', to: 'users#new', as: 'new_user'
   post '/users', to: 'users#create'
   get '/users/:id', to: 'users#show', as: 'user'
@@ -10,6 +7,8 @@ Rails.application.routes.draw do
   resources :trips do
     resources :outbounds
     resources :inbounds
+    resources :receipts, only: [:index, :new, :create]
+    resources :travelgroupings, only: [:new, :create]
   end
 
   get "/login", to: "sessions#new"
