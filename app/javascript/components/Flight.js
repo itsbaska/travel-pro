@@ -3,7 +3,6 @@ import PropTypes from "prop-types"
 
 class Flight extends React.Component {
   render () {
-    console.log(this.props)
     return (
       <li>
         <h4 className="airline-name">{this.props.airline}</h4>

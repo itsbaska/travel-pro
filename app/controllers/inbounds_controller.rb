@@ -22,7 +22,7 @@ class InboundsController < ApplicationController
     if @inbound.save
       redirect_to @trip
     else
-      render component: 'NewInbound', props: {errors: @inbound.errors.full_messages}
+      render component: 'NewInbound', props: {errors: @inbound.errors.full_messages, trip: @trip}
     end
   end
 
