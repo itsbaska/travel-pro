@@ -18,14 +18,7 @@ class NavigationBar extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.props)
     this.setState({loggedIn: this.props.data.loggedIn, currentUser: this.props.data.currentUser})
-  }
-
-  componentWillUpdate(props, state){
-    console.log("uppdadartatw")
-    console.log("props", props)
-    console.log("state", state)
   }
 
   render () {

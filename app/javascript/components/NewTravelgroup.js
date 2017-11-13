@@ -1,13 +1,13 @@
 import React from "react"
 import PropTypes from "prop-types"
-import $ from 'jquery'
 
 class NewTravelgroup extends React.Component {
    constructor(props) {
     super(props)
     this.state = {
       travellerEmail: '',
-      trip: props.data,
+      trip: props.data || props.trip,
+      token: '',
       errors: props.errors || ''
     }
 
@@ -17,6 +17,11 @@ class NewTravelgroup extends React.Component {
 
   handleNewTravelgroupChange(input) {
     this.setState({value: input})
+  }
+
+  componentDidMount(){
+    const tokenGuyyyy = document.getElementsByTagName('meta')[1].content
+    this.setState({token:tokenGuyyyy})
   }
 
   handleNewTravelgroupSubmit() {
@@ -30,7 +35,6 @@ class NewTravelgroup extends React.Component {
   }
 
   render () {
-    const token = $('meta[name="csrf-token"]').attr('content');
 
     if (this.state.errors.length > 0){
       return (
@@ -38,7 +42,7 @@ class NewTravelgroup extends React.Component {
         <h1>{this.state.errors}</h1>
         <form className="travelgroup-new-form" method="post" action={"/trips/" + this.state.trip.id + "/travelgroupings"} onSubmit={this.handleNewTravelgroupSubmit}>
           <h2>Create New Trip</h2>
-          <input type="hidden" name="authenticity_token" value={token} readOnly={true} />
+          <input type="hidden" name="authenticity_token" value={this.state.token} readOnly={true} />
          <label htmlFor="travellerEmail">Traveller's Email:</label>
           <input type="text" name="travellerEmail" onChange={this.handleNewTravelgroupChange}/>
 
@@ -50,7 +54,7 @@ class NewTravelgroup extends React.Component {
       return (
         <form className="travelgroup-new-form" method="post" action={"/trips/" + this.state.trip.id + "/travelgroupings"} onSubmit={this.handleNewTravelgroupSubmit}>
           <h2>Create New Trip</h2>
-          <input type="hidden" name="authenticity_token" value={token} readOnly={true} />
+          <input type="hidden" name="authenticity_token" value={this.state.token} readOnly={true} />
           <label htmlFor="travellerEmail">Traveller's Email:</label>
           <input type="text" name="travellerEmail" onChange={this.handleNewTravelgroupChange}/>
 
