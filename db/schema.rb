@@ -18,9 +18,12 @@ ActiveRecord::Schema.define(version: 20171110220450) do
   create_table "inbounds", force: :cascade do |t|
     t.string "airline", null: false
     t.datetime "arrival", null: false
+    t.string "arrival_formatted"
     t.datetime "departure", null: false
+    t.string "departure_formatted"
     t.string "airport", null: false
     t.integer "travelgrouping_id"
+    t.string "traveller_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -28,9 +31,12 @@ ActiveRecord::Schema.define(version: 20171110220450) do
   create_table "outbounds", force: :cascade do |t|
     t.string "airline", null: false
     t.datetime "arrival", null: false
+    t.string "arrival_formatted"
     t.datetime "departure", null: false
+    t.string "departure_formatted"
     t.string "airport", null: false
     t.integer "travelgrouping_id"
+    t.string "traveller_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -41,6 +47,7 @@ ActiveRecord::Schema.define(version: 20171110220450) do
     t.integer "trip_id"
     t.integer "purchaser_id"
     t.string "photo_url"
+    t.string "purchaser_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "photo_file_name"
@@ -60,12 +67,18 @@ ActiveRecord::Schema.define(version: 20171110220450) do
     t.string "name", null: false
     t.string "location", null: false
     t.decimal "budget", null: false
+    t.date "start_date", null: false
+    t.string "start_date_formatted"
+    t.date "end_date", null: false
+    t.string "end_date_formatted"
     t.integer "organizer_id"
+    t.string "organizer_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "full_name"
     t.string "first_name", null: false
     t.string "last_name", null: false
     t.string "phone_number", null: false
