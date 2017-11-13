@@ -8,10 +8,13 @@
     "@rails/webpacker": "^3.0.2",
     "babel-preset-react": "^6.24.1",
     "caniuse-lite": "^1.0.30000760",
+    "chart.js": "^2.7.1",
     "coffeescript": "1.12.7",
     "prop-types": "^15.6.0",
     "react": "^16.1.0",
+    "react-chartjs-2": "^2.6.4",
     "react-dom": "^16.1.0",
+    "react-rails": "^0.2.5",
     "react_ujs": "^2.4.1",
     "webpack": "^3.8.1"
   },
