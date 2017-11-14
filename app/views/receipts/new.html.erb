@@ -2,6 +2,9 @@
 <%= content_tag :div,
   id: "receipt-form",
   data: {
-    trip: @trip
+    trip: @trip,
+    receipt_stuff: ENV['cloud_key'],
+    receipt_code: ENV['code'],
+    receipt_name: ENV['name']
   }.to_json do %>
 <% end %>

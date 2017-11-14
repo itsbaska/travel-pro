@@ -7,7 +7,9 @@ import superagent from 'superagent'
 
 class ReceiptForm extends React.Component {
   constructor(props) {
+    console.log(props)
     super(props)
+
       this.state = {
         store: '',
         total: '',
@@ -21,7 +23,6 @@ class ReceiptForm extends React.Component {
   }
 
   handleReceiptChange(input) {
-    console.log(input)
     this.setState({value: input})
   }
 
@@ -32,7 +33,6 @@ class ReceiptForm extends React.Component {
 
   handleReceiptForm() {
     var form = new FormData(document.getElementById('receipt-form'))
-    console.log(form)
     fetch("http://localhost:3000/receipts/new", {
       method: "POST",
       headers: {'X-CSRF-Token': token
@@ -44,16 +44,16 @@ class ReceiptForm extends React.Component {
   uploadFile(files) {
     const image = files[0]
 
-    const cloudName = 'travel-pro'
-    const url = 'https://api.cloudinary.com/v1_1/'+cloudName+'/image/upload'
+    const cloudName = 'travel-pro2'
+    const url = 'https://api.cloudinary.com/v1_1/'+ cloudName +'/image/upload'
     const timestamp = Date.now()/1000
-    const uploadPreset = ENV['name']
-    const paramsStr = 'timestamp='+timestamp+'&upload_preset='+uploadPreset+ENV['code']
+    const uploadPreset = this.props.receipt_name
+    const paramsStr = 'timestamp='+timestamp+'&upload_preset='+uploadPreset+this.props.receipt_code
 
     const signature = sha1(paramsStr)
 
     const params ={
-      'api_key': ENV['cloud-key'],
+      'api_key': this.props.receipt_stuff,
       'timestamp': timestamp,
       'upload_preset': uploadPreset,
       'signature': signature
