@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 
+
 class Login extends React.Component {
   constructor(props) {
     super(props)
@@ -33,9 +34,13 @@ class Login extends React.Component {
     if (this.state.error.length > 0 ) {
       return (
         <div>
-        <h1>{this.state.error}</h1>
+
         <form className="login-form" onSubmit={this.handleLoginForm} method="post" action="/sessions">
           <h2>Login</h2>
+
+          <ul className="error">
+            <li>{this.state.error}</li>
+          </ul>
 
           <label htmlFor="email">Email</label>
           <input type="email" name="email" onChange={this.handleLoginChange} />
