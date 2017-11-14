@@ -49,12 +49,12 @@ class ReceiptForm extends React.Component {
     const timestamp = Date.now()/1000
     const uploadPreset = 'iejwejnp'
 
-    const paramsStr = 'timestamp='+timestamp+'&upload_preset='+uploadPreset+'dQ_mO4v9nHjX1OLQrRN0s0XhbGQ'
+    const paramsStr = 'timestamp='+timestamp+'&upload_preset='+uploadPreset+ENV['code']
 
     const signature = sha1(paramsStr)
 
     const params ={
-      'api_key': '373621175822655',
+      'api_key': ENV['cloud-key'],
       'timestamp': timestamp,
       'upload_preset': uploadPreset,
       'signature': signature
