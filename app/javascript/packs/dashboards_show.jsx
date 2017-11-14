@@ -5,6 +5,7 @@ import Trips from '../components/Trips'
 
 
 const Trip = props => (
+  <div>
   <div className="main-content">
     <div className="trips-list">
     <div className="column-1">
@@ -17,6 +18,8 @@ const Trip = props => (
       </div>
     </div>
   </div>
+</div>
+
 )
 
 document.addEventListener('DOMContentLoaded', () => {
