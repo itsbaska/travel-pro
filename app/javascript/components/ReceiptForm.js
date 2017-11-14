@@ -21,6 +21,7 @@ class ReceiptForm extends React.Component {
   }
 
   handleReceiptChange(input) {
+    console.log(input)
     this.setState({value: input})
   }
 
@@ -31,6 +32,7 @@ class ReceiptForm extends React.Component {
 
   handleReceiptForm() {
     var form = new FormData(document.getElementById('receipt-form'))
+    console.log(form)
     fetch("http://localhost:3000/receipts/new", {
       method: "POST",
       headers: {'X-CSRF-Token': token
@@ -73,7 +75,6 @@ class ReceiptForm extends React.Component {
       const uploaded = resp.body
       let updatedImages = Object.assign([], this.state.images)
       updatedImages.push(uploaded)
-
       this.setState({
         images: updatedImages
       })
@@ -104,6 +105,7 @@ class ReceiptForm extends React.Component {
 
             <label htmlFor="receipt">Receipt:</label>
             <Dropzone onDrop={this.uploadFile.bind(this)}/> 
+             <input type="hidden"  name="photo" value={this.state.images.map((image) => image.url)} onChange={this.handleReceiptChange} />
             <ol> 
               {list}
             </ol> 
@@ -132,8 +134,8 @@ class ReceiptForm extends React.Component {
             <input type="text" name="total" onChange={this.handleReceiptChange}/>
 
             <label htmlFor="receipt">Receipt:</label>
-            <Dropzone onDrop={this.uploadFile.bind(this)}/> 
-
+            <Dropzone onDrop={this.uploadFile.bind(this)} /> 
+            <input type="hidden" name="photo" value={this.state.images.map((image) => image.url)} onChange={this.handleReceiptChange} />  
              <ol> 
               {list}
             </ol> 
