@@ -5,7 +5,7 @@ class CreateReceipts < ActiveRecord::Migration[5.1]
       t.string :store, null: false
       t.integer :trip_id
       t.integer :purchaser_id
-      t.string :photo_url
+      t.string :photo
       t.string :purchaser_name
 
       t.timestamps
