@@ -20,9 +20,9 @@ User.create(first_name: "Baska", last_name: "Batbold", email: "bb@gmail.com", ph
 
 User.create(first_name: "Melissa", last_name: "K", email: "mk@gmail.com", phone_number: "123-456-7891", password: "password")
 
-trip1 = Trip.create(name: "Sister the travelling pants convention", location: "Paris", budget: 538.90, organizer_id: 2, start_date: DateTime.strptime("11/25/2017 17:00", "%m/%d/%Y %H:%M"), end_date: DateTime.strptime("11/30/2017 17:00", "%m/%d/%Y %H:%M"))
-trip2 = Trip.create(name: "DBC reunion", location: "Bahamas", budget: 78.03, organizer_id: 1, start_date: DateTime.strptime("11/17/2017 17:00", "%m/%d/%Y %H:%M"), end_date: DateTime.strptime("11/25/2017 17:00", "%m/%d/%Y %H:%M"))
-trip3 = Trip.create(name: "Dodge Ball Wednesday Meet Up", location: "Rocky Mountains", budget: 32.50, organizer_id: 3, start_date: DateTime.strptime("12/1/2017 11:00", "%m/%d/%Y %H:%M"), end_date: DateTime.strptime("12/15/2017 11:00", "%m/%d/%Y %H:%M"))
+trip1 = Trip.create(name: "Sister the travelling pants convention", location: "Paris", budget: 538.90, organizer_id: 2, start_date: Date.strptime("11/25/2017", "%m/%d/%Y"), end_date: Date.strptime("11/30/2017", "%m/%d/%Y"))
+trip2 = Trip.create(name: "DBC reunion", location: "Bahamas", budget: 78.03, organizer_id: 1, start_date: Date.strptime("11/17/2017", "%m/%d/%Y"), end_date: Date.strptime("11/25/2017", "%m/%d/%Y"))
+trip3 = Trip.create(name: "Dodge Ball Wednesday Meet Up", location: "Rocky Mountains", budget: 32.50, organizer_id: 3, start_date: Date.strptime("12/1/2017", "%m/%d/%Y"), end_date: Date.strptime("12/15/2017", "%m/%d/%Y"))
 
 Receipt.create(total: 223.00, store: "Forever21", trip_id: 1, purchaser_id: 1)
 Receipt.create(total: 45.32, store: "Target", trip_id: 1, purchaser_id: 2)
