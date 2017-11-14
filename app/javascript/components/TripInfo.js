@@ -61,16 +61,15 @@ class TripInfo extends React.Component {
           {this.state.travellers}
 
           <Chart chartData={this.state.chartData} location={this.state.trip.location} legendPosition="bottom" />
-
-        <a href={"/trips/" + this.state.trip.id + "/receipts/new" }><button className="add-receipt">Add Receipt</button></a>
       </ul>
-
-      <a href={"/trips/" + this.state.trip.id + "/outbounds/new"}><button>Add Outbound Info</button></a>
-      <a href={"/trips/" + this.state.trip.id + "/inbounds/new"}><button>Add Inbound Info</button></a>
-
-      <a href={"/trips/" + this.state.trip.id + "/outbounds"}><button>All Outbound Trips</button></a>
-      <a href={"/trips/" + this.state.trip.id + "/inbounds"}><button>All Inbound Trips</button></a>
-      <a href={"/trips/" + this.state.trip.id + "/travelgroupings/new"}><button>Add Traveller</button></a>
+      <div className="trip-info-buttons">
+        <a href={"/trips/" + this.state.trip.id + "/receipts/new" }><button className="add-receipt">Add Receipt</button></a>
+        <a href={"/trips/" + this.state.trip.id + "/outbounds/new"}><button>Add Outbound Info</button></a>
+        <a href={"/trips/" + this.state.trip.id + "/inbounds/new"}><button>Add Inbound Info</button></a>
+        <a href={"/trips/" + this.state.trip.id + "/outbounds"}><button>All Outbound Trips</button></a>
+        <a href={"/trips/" + this.state.trip.id + "/inbounds"}><button>All Inbound Trips</button></a>
+        <a href={"/trips/" + this.state.trip.id + "/travelgroupings/new"}><button>Add Traveller</button></a>
+        </div>
       </div>
     );
   }
