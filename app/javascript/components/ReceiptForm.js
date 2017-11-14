@@ -47,8 +47,7 @@ class ReceiptForm extends React.Component {
     const cloudName = 'travel-pro'
     const url = 'https://api.cloudinary.com/v1_1/'+cloudName+'/image/upload'
     const timestamp = Date.now()/1000
-    const uploadPreset = 'iejwejnp'
-
+    const uploadPreset = ENV['name']
     const paramsStr = 'timestamp='+timestamp+'&upload_preset='+uploadPreset+ENV['code']
 
     const signature = sha1(paramsStr)
@@ -70,7 +69,7 @@ class ReceiptForm extends React.Component {
     uploadRequest.end((err,resp) => {
       if (err) {
         alert(err)
-        return 
+        return
       }
       const uploaded = resp.body
       let updatedImages = Object.assign([], this.state.images)
@@ -85,8 +84,8 @@ class ReceiptForm extends React.Component {
     const list = this.state.images.map((image, i) => {
       return (
         <li key={i}>
-          <img style={{width:72}} src={image.secure_url} /> 
-        </li> 
+          <img style={{width:72}} src={image.secure_url} />
+        </li>
       )
     })
     if (this.state.errors.length > 0){
@@ -104,11 +103,11 @@ class ReceiptForm extends React.Component {
           <input type="text" name="total" onChange={this.handleReceiptChange}/>
 
             <label htmlFor="receipt">Receipt:</label>
-            <Dropzone onDrop={this.uploadFile.bind(this)}/> 
+            <Dropzone onDrop={this.uploadFile.bind(this)}/>
              <input type="hidden"  name="photo" value={this.state.images.map((image) => image.url)} onChange={this.handleReceiptChange} />
-            <ol> 
+            <ol>
               {list}
-            </ol> 
+            </ol>
           <button type="submit">Save Receipt</button>
         </form>
       </div>
@@ -118,8 +117,8 @@ class ReceiptForm extends React.Component {
       const list = this.state.images.map((image, i) => {
       return (
         <li key={i}>
-          <img style={{width:72}} src={image.secure_url} /> 
-        </li> 
+          <img style={{width:72}} src={image.secure_url} />
+        </li>
       )
     })
       return (
@@ -134,11 +133,11 @@ class ReceiptForm extends React.Component {
             <input type="text" name="total" onChange={this.handleReceiptChange}/>
 
             <label htmlFor="receipt">Receipt:</label>
-            <Dropzone onDrop={this.uploadFile.bind(this)} /> 
-            <input type="hidden" name="photo" value={this.state.images.map((image) => image.url)} onChange={this.handleReceiptChange} />  
-             <ol> 
+            <Dropzone onDrop={this.uploadFile.bind(this)} />
+            <input type="hidden" name="photo" value={this.state.images.map((image) => image.url)} onChange={this.handleReceiptChange} />
+             <ol>
               {list}
-            </ol> 
+            </ol>
             <button type="submit">Save Receipt</button>
         </form>
       );
