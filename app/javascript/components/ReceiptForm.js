@@ -44,13 +44,13 @@ class ReceiptForm extends React.Component {
           <Errors>{this.state.errors}</Errors>
           <input type="hidden" name="authenticity_token" value={this.state.token} readOnly={true} />
 
-          <label htmlFor="store">Store</label>
+          <label htmlFor="store">Store: </label>
           <input type="text" name="store" onChange={this.handleReceiptChange}/>
 
-          <label htmlFor="total">Total</label>
+          <label htmlFor="total">Total: $</label>
           <input type="text" name="total" onChange={this.handleReceiptChange}/>
 
-          <label htmlFor="receipt">Receipt</label>
+          <label htmlFor="receipt">Receipt: </label>
           <input type="file" name="photo" onChange={this.handleReceiptChange}/>
 
           <button type="submit">Save Receipt</button>
@@ -63,13 +63,13 @@ class ReceiptForm extends React.Component {
             <h2>Add a Receipt</h2>
             <input type="hidden" name="authenticity_token" value={this.state.token} readOnly={true} />
 
-            <label htmlFor="store">Store</label>
+            <label htmlFor="store">Store: </label>
             <input type="text" name="store" onChange={this.handleReceiptChange}/>
 
-            <label htmlFor="total">Total</label>
+            <label htmlFor="total">Total: $</label>
             <input type="text" name="total" onChange={this.handleReceiptChange}/>
 
-            <label htmlFor="receipt">Receipt</label>
+            <label htmlFor="receipt">Receipt: </label>
             <input type="file" name="photo" onChange={this.handleReceiptChange}/>
 
             <button type="submit">Save Receipt</button>
