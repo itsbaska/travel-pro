@@ -1,5 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
+import Errors from "./Errors.js"
 
 class ReceiptForm extends React.Component {
   constructor(props) {
@@ -38,9 +39,9 @@ class ReceiptForm extends React.Component {
     if (this.state.errors.length > 0){
       return (
         <div>
-        <h1>{this.state.errors}</h1>
         <form className="receipt-form" method="post" action={"/trips/" + this.props.trip.id + "/receipts"} onSubmit={this.handleReceiptForm} encType="multipart/form-data">
           <h2>Add a Receipt</h2>
+          <Errors>{this.state.errors}</Errors>
           <input type="hidden" name="authenticity_token" value={this.state.token} readOnly={true} />
 
           <label htmlFor="store">Store</label>

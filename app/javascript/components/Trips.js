@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import Trip from "./Trip.js"
+import Trip from "./Trip"
 
 class Trips extends React.Component {
     constructor(args) {

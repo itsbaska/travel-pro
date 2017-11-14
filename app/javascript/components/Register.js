@@ -1,5 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
+import Errors from "./Errors.js"
 
 class Register extends React.Component {
   constructor(props) {
@@ -34,9 +35,10 @@ class Register extends React.Component {
     if (this.state.errors.length > 0) {
       return (
       <div>
-      <h1>{this.state.errors}</h1>
+
       <form className="register-form" method="post" action="/users" onSubmit={this.handleRegisterForm}>
           <h2>Register</h2>
+           <Errors>{this.state.errors}</Errors>
 
           <label htmlFor="first_name">First Name</label>
           <input type="text" name="first_name" onChange={this.handleRegisterChange}/>

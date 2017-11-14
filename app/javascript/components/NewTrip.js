@@ -2,6 +2,7 @@
 
 import React from "react"
 import PropTypes from "prop-types"
+import Errors from "./Errors.js"
 
 class NewTrip extends React.Component {
    constructor(props) {
@@ -42,18 +43,25 @@ class NewTrip extends React.Component {
     if (this.state.errors.length > 0){
       return (
         <div>
-        <h1>{this.state.errors}</h1>
         <form className="trip-new-form" method="post" action="/trips" onSubmit={this.handleNewTripSubmit}>
           <h2>Create New Trip</h2>
+          <Errors>{this.state.errors}</Errors>
           <input type="hidden" name="authenticity_token" value={this.state.token} readOnly={true} />
+
           <label htmlFor="name">Name:</label>
           <input type="text" name="name" onChange={this.handleNewTripChange}/>
 
           <label htmlFor="location">Location:</label>
           <input type="text" name="location" onChange={this.handleNewTripChange}/>
 
-          <label htmlFor="budget">Budget:</label>
-          <input type="text" name="budget" onChange={this.handleNewTripChange}/>
+          <label htmlFor="start_date">Start date:</label>
+          <input type="date" name="start_date" onChange={this.handleNewTripChange} />
+
+          <label htmlFor="end_date">End Date:</label>
+          <input type="date" name="end_date" onChange={this.handleNewTripChange}/>
+
+          <label htmlFor="budget">Budget: $</label>
+          <input type="text" name="budget" onChange={this.handleNewTripChange} placeholder="0.01"/>
 
           <input type="submit" value="Save" />
         </form>
@@ -70,8 +78,14 @@ class NewTrip extends React.Component {
           <label htmlFor="location">Location:</label>
           <input type="text" name="location" onChange={this.handleNewTripChange}/>
 
-          <label htmlFor="budget">Budget:</label>
-          <input type="text" name="budget" onChange={this.handleNewTripChange}/>
+          <label htmlFor="start_date">Start date:</label>
+          <input type="date" name="start_date" onChange={this.handleNewTripChange}/>
+
+          <label htmlFor="end_date">End Date:</label>
+          <input type="date" name="end_date" onChange={this.handleNewTripChange}/>
+
+          <label htmlFor="budget">Budget: $</label>
+          <input type="text" name="budget" onChange={this.handleNewTripChange} placeholder="0.01"/>
 
           <input type="submit" value="Save" />
         </form>

@@ -31,6 +31,6 @@ class TripsController < ApplicationController
 
   private
   def trip_params
-    params.permit(:name, :location, :budget).merge(organizer: current_user)
+    params.permit(:name, :location, :start_date, :end_date, :budget).merge(organizer: current_user)
   end
 end
