@@ -48,16 +48,16 @@ class NewOutbound extends React.Component {
           <Errors>{this.state.errors}</Errors>
           <h4>Outbound</h4>
 
-          <label htmlFor="airport">Airport:</label>
+          <label htmlFor="airport">Airport: </label>
           <input type="text" name="airport" onChange={this.handleNewOutboundChange} />
 
-          <label htmlFor="airline">Airline:</label>
+          <label htmlFor="airline">Airline: </label>
           <input type="text" name="airline" onChange={this.handleNewOutboundChange} />
 
-          <label htmlFor="arrival">Arrival:</label>
+          <label htmlFor="arrival">Arrival: </label>
           <input type="datetime-local" name="arrival" onChange={this.handleNewOutboundChange} />
 
-          <label htmlFor="departure">Departure:</label>
+          <label htmlFor="departure">Departure: </label>
           <input type="datetime-local" name="departure" onChange={this.handleNewOutboundChange} />
 
            <input type="submit" value="Save" />
@@ -71,13 +71,13 @@ class NewOutbound extends React.Component {
           <h2>Add Booking Info</h2>
           <h4>Outbound</h4>
 
-          <label htmlFor="airport">Airport:</label>
+          <label htmlFor="airport">Airport: </label>
           <input type="text" name="airport" onChange={this.handleNewOutboundChange} />
 
-          <label htmlFor="airline">Airline:</label>
+          <label htmlFor="airline">Airline: </label>
           <input type="text" name="airline" onChange={this.handleNewOutboundChange} />
 
-          <label htmlFor="arrival">Arrival:</label>
+          <label htmlFor="arrival">Arrival: </label>
           <input type="datetime-local" name="arrival" onChange={this.handleNewOutboundChange} />
 
           <label htmlFor="departure">Departure:</label>

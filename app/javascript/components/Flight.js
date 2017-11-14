@@ -7,8 +7,8 @@ class Flight extends React.Component {
       <li>
         <h4>{this.props.traveller_name}</h4>
         <p className="airline-name">{this.props.airline}</p>
-        <p className="airline-arrival">{this.props.arrival}</p>
-        <p className="airline-departure">{this.props.departure}</p>
+        <p className="airline-arrival">{this.props.arrival_formatted}</p>
+        <p className="airline-departure">{this.props.departure_formatted}</p>
         <p className="airport-name">{this.props.airport}</p>
       </li>
     )
