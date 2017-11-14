@@ -1,6 +1,9 @@
 class DashboardsController < ApplicationController
   def show
     authenticate!
-    @trips = Trip.where(organizer_id: params[:id])
+
+    @user = User.find(params[:id])
+    @organized_trips = @user.trips
+    @travelling_trips = @user.travel_trips
   end
 end
