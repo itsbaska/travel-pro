@@ -4,7 +4,7 @@ class Traveller extends React.Component {
 render () {
     return (
       <li>
-        <p className="trip-name">{this.props.first_name}</p>
+        <p className="trip-name">{this.props.full_name}</p>
       </li>
     )
   }

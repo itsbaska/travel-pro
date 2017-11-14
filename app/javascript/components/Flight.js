@@ -5,9 +5,10 @@ class Flight extends React.Component {
   render () {
     return (
       <li>
-        <h4 className="airline-name">{this.props.airline}</h4>
-        <p className="airline-arrival">{this.props.arrival}</p>
-        <p className="airline-departure">{this.props.departure}</p>
+        <h4>{this.props.traveller_name}</h4>
+        <p className="airline-name">{this.props.airline}</p>
+        <p className="airline-arrival">{this.props.arrival_formatted}</p>
+        <p className="airline-departure">{this.props.departure_formatted}</p>
         <p className="airport-name">{this.props.airport}</p>
       </li>
     )
