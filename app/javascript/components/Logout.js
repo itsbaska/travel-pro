@@ -13,10 +13,6 @@ class Logout extends React.Component {
     fetch('http://localhost:3000/logout', {
       url: 'http://localhost:3000/logout',
       method: "DELETE"
-    }).then(data => {
-      console.log(data.blob())
-    }).then(thing => {
-      console.log(thing)
     })
   }
 
