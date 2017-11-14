@@ -24,8 +24,8 @@ class TripsController < ApplicationController
     authenticate!
     @trip = Trip.find(params[:id])
     @travellers = @trip.travellers
+    @amount = @trip.data_array
 
-    @receipt_numbers = @trip.receipts.pluck(:total)
     @receipt_names = []
   end
 
