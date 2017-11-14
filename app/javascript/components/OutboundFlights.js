@@ -17,7 +17,6 @@ class OutboundFlights extends React.Component {
       )
     })
     this.setState({outboundFlights: flightsies})
-    console.log(this.state.outboundFlights)
   }
 
   render () {
