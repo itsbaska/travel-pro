@@ -25,8 +25,7 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
     @travellers = @trip.travellers
     @amount = @trip.data_array
-
-    @receipt_names = []
+    @purchasers = @trip.purchasers_array
   end
 
   private

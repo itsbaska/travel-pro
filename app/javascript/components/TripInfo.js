@@ -5,8 +5,8 @@ import Traveller from "./Traveller.js"
 import Chart from './Chart.js'
 
 class TripInfo extends React.Component {
-  constructor(args) {
-    super(args)
+  constructor(props) {
+    super(props)
     this.state = {
       trip: [],
       travellers: [],
@@ -18,26 +18,20 @@ class TripInfo extends React.Component {
     this.getChartData()
   }
 
-  tripData() {
-    console.log(this.props.data.trip)
-  }
-
   getChartData() {
-    const budget = this.props.data.trip.budget
-    this.tripData()
     this.setState({
       chartData:{
-        labels: this.props.totals,
+        labels: this.props.data.purchasers,
 
         datasets:[
           {
             label: "Total",
 
-            data: [budget, 300, 200],
+            data: this.props.data.amount,
             backgroundColor: [
               'rgba(255, 99, 132, 0.6)',
               'rgba(54, 162, 235, 0.6)',
-              'rgba(255, 200, 100, 0.6)'
+              'rgba(255, 200, 100, 0.6)',
             ]
           }
         ]
