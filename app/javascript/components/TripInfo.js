@@ -59,7 +59,7 @@ class TripInfo extends React.Component {
       <div>
       <ul>
         <h3>{this.state.trip.name}</h3>
-        <h4>organized by: {this.state.trip.organizer}</h4>
+        <h4>organized by: {this.state.trip.organizer_name}</h4>
         <p>Location: {this.state.trip.location}</p>
         <h4>Travellers</h4>
           {this.state.travellers}
