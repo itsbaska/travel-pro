@@ -24,26 +24,35 @@ class NavigationBar extends React.Component {
   render () {
     if (this.state.loggedIn === false) {
       return (
-      <nav>
-        <h1>travel pro</h1>
-        <ul className="menu">
-          <li><a href='/'>Home</a></li>
-          <li><a href='/login'>Login</a></li>
-          <li><a href='/users/sign_up'>Register</a></li>
-        </ul>
-      </nav>
+      <div>
+        <div className="page-title">
+          <h1>travel pro&ensp;<i className="fa fa-plane" aria-hidden="true"></i></h1>
+        </div>
+        <nav className="sidebar">
+          <ul className="menu">
+            <li><a href='/'>Home</a></li>
+            <li><a href='/login'>Login</a></li>
+            <li><a href='/users/sign_up'>Register</a></li>
+          </ul>
+        </nav>
+      </div>
+
       )
     } else {
       return (
-      <nav>
-        <h1>travel pro&ensp;<i className="fa fa-plane" aria-hidden="true"></i></h1>
-        <ul>
-          <li><a href='/'>Home</a></li>
-          <li><a href={"/users/" + this.state.currentUser.id + "/dashboards"}>Dashboard</a></li>
-            <li><a href="/trips/new"><button>Create Trip</button></a></li>
-          <li>< Logout setNothing={this.setNothing}/></li>
-        </ul>
-      </nav>
+      <div>
+        <div className="page-title">
+          <h1>travel pro&ensp;<i className="fa fa-plane" aria-hidden="true"></i></h1>
+        </div>
+        <nav className="sidebar">
+          <ul>
+            <li><a href='/'>Home</a></li>
+            <li><a href={"/users/" + this.state.currentUser.id + "/dashboards"}>Dashboard</a></li>
+              <li><a href="/trips/new"><button>Create Trip</button></a></li>
+            <li>< Logout setNothing={this.setNothing}/></li>
+          </ul>
+        </nav>
+      </div>
       )
     }
   }
