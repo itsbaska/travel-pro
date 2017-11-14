@@ -7,7 +7,7 @@ Inbound.destroy_all
 
 User.create(first_name: "Vikky", last_name: "Luc", email: "vikky@gmail.com", phone_number: "847-312-4925", password: "password")
 User.create(first_name: "Baska", last_name: "Batbold", email: "bb@gmail.com", phone_number: "847-123-1234", password: "password")
-User.create(first_name: "Melissa", last_name: "K", email: "mk7run@gmail.com", phone_number: "312-456-7891", password: "password")
+User.create(first_name: "Melissa", last_name: "Kanhirun", email: "mk7run@gmail.com", phone_number: "312-456-7891", password: "password")
 User.create(first_name: "Marla", last_name: "Kallstrom", email: "mk-j@gmail.com", phone_number: "571-416-7561", password: "password")
 User.create(first_name: "Austy", last_name: "Ratcliff", email: "austin@gmail.com", phone_number: "312-569-7223", password: "password")
 User.create(first_name: "Sam", last_name: "Tietze", email: "samtietze@gmail.com", phone_number: "312-476-0921", password: "password")
