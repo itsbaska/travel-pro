@@ -25,9 +25,6 @@ class NavigationBar extends React.Component {
     if (this.state.loggedIn === false) {
       return (
       <div>
-        <div className="page-title">
-          <h1>travel pro&ensp;<i className="fa fa-plane" aria-hidden="true"></i></h1>
-        </div>
         <nav className="sidebar">
           <ul className="menu">
             <li><a href='/'>Home</a></li>
@@ -41,9 +38,6 @@ class NavigationBar extends React.Component {
     } else {
       return (
       <div>
-        <div className="page-title">
-          <h1>travel pro&ensp;<i className="fa fa-plane" aria-hidden="true"></i></h1>
-        </div>
         <nav className="sidebar">
           <ul>
             <li><a href='/'>Home</a></li>

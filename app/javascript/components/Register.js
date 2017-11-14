@@ -24,7 +24,7 @@ class Register extends React.Component {
 
   handleRegisterForm() {
     var form = new FormData(document.getElementById('register-form'))
-    fetch("http://localhost:3000/users/sign_up", {
+    fetch({
       method: "POST",
       headers: {'X-CSRF-Token': token},
       body: form
