@@ -55,12 +55,14 @@ class TripInfo extends React.Component {
         <h3>{this.state.trip.name}</h3>
         <h4>organized by: {this.state.trip.organizer_name}</h4>
         <p>Location: {this.state.trip.location}</p>
+        <p>Budget: ${this.state.trip.budget}</p>
+
         <h4>Travellers</h4>
           {this.state.travellers}
 
           <Chart chartData={this.state.chartData} location={this.state.trip.location} legendPosition="bottom" />
 
-        <a href={"/trips/" + this.state.trip.id + "/receipts/new" }><button>Add Receipt</button></a>
+        <a href={"/trips/" + this.state.trip.id + "/receipts/new" }><button className="add-receipt">Add Receipt</button></a>
       </ul>
 
       <a href={"/trips/" + this.state.trip.id + "/outbounds/new"}><button>Add Outbound Info</button></a>

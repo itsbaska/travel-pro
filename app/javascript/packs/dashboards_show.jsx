@@ -5,9 +5,17 @@ import Trips from '../components/Trips'
 
 
 const Trip = props => (
-  <div>
-  <h2>Trips organized by {props.organizer.first_name}</h2>
-    <Trips data={props.trips} />
+  <div className="main-content">
+    <div className="trips-list">
+    <div className="column-1">
+      <h2 className="secondary-title">Trips organized by {props.currentUser.first_name}</h2>
+        <Trips data={props.trips} key={props.trips} />
+    </div>
+    <div className="column-2">
+      <h2 className="secondary-title">Trips {props.currentUser.first_name} is attending</h2>
+      <Trips data={props.travelTrips} key={props.travelTrips} />
+      </div>
+    </div>
   </div>
 )
 
