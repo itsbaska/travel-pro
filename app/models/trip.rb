@@ -45,4 +45,25 @@ class Trip < ApplicationRecord
       errors.add(:end_date, "must not be in the past")
     end
   end
+
+  def receipt_total
+    self.receipts.reduce(0) {|total, receipt| total + receipt.total}
+  end
+
+  def remainder_amount
+    remainder = self.budget - self.receipt_total
+    remainder.to_f
+  end
+
+  def receipt_amount_array
+    self.receipts.pluck(:total)
+  end
+
+  def purchasers_array
+    self.receipts.map { |receipt| receipt.receipt_purchaser }.unshift("budget")
+  end
+
+  def data_array
+    self.receipt_amount_array.unshift(remainder_amount)
+  end
 end
