@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 class Trip extends React.Component {
   render () {
     return (
-      <li>
+      <li className="trip-item">
         <h3 className="trip-name"><a href={"/trips/"+ this.props.id}>{this.props.name}</a></h3>
         <p className="trip-location"><i className="fa fa-map-marker" aria-hidden="true"></i>  &emsp;{this.props.location}</p>
         <p className="trip-start-date">Start date: {this.props.start_date_formatted}</p>
