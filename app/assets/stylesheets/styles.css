@@ -32,39 +32,15 @@ li {
   list-style: none;
 }
 
-nav {
-  background-color: #E36B32;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  color: #fff;
-  padding: 15px;
-  padding-left: 40px;
-  margin: 0;
-}
-
-nav ul {
-  display: flex;
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
-}
-
-nav li {
-  margin: 5px;
-}
 nav li a {
   text-decoration: none;
 }
 
 input[type=submit], button {
+  box-sizing: border-box;
   outline: 0;
   border: 0;
-  width: 100px;
-  border-radius: 7px;
-  background-color: #fff;
-  margin: 3%;
-  padding: 10px;
+  width: 100%;
 }
 
 /*--------------------------------------------------------------
@@ -144,22 +120,7 @@ CSS Grid layout for wider screens, when browser supports grid:
       text-align: center;
     }
 
-    nav {
-      margin: 0;
-      left: 0;
-      right: 0;
-      overflow:hidden;
-      font-size: 2em;
-      display: block;
-      overflow: hidden;
-    }
-
-    nav ul li {
-      display: block;
-    }
-
     h1 {
-
       font-size: 100px;
     }
 
@@ -167,14 +128,25 @@ CSS Grid layout for wider screens, when browser supports grid:
 
   @media screen and (min-width: 1200px) {
 
-    .page-title {
-      background-color: yellow;
+    .footer {
+      background-color: blue;
       padding: 20px;
-      margin: 0;
+      color: #fff;
+      font-family: sans-serif;
+      text-align: center;
+
     }
 
     .page-title {
+      background-color: purple;
+      padding: 20px;
+      box-sizing: border-box;
       grid-area: header;
+    }
+
+    .page-title h1 {
+      margin: 0;
+
     }
 
     .main-content {
@@ -188,13 +160,22 @@ CSS Grid layout for wider screens, when browser supports grid:
     nav.sidebar {
       grid-area: sidebar;
     }
+    .footer {
+      grid-area: footer;
+    }
+
+    .sidebar li {
+      display: block;
+    }
 
     .site {
       display: grid;
       grid-template-columns: 1fr 3fr;
+      grid-rows: auto;
       grid-template-areas:
-        "main sidebar"
-        "header header";
+        "header header"
+        "sidebar main"
+        "footer footer";
     }
 
     h2.secondary-title {
