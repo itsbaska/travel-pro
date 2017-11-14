@@ -6,8 +6,11 @@ import Trips from '../components/Trips'
 
 const Trip = props => (
   <div>
-  <h2>Trips organized by {props.organizer.first_name}</h2>
-    <Trips data={props.trips} />
+  <h2>Trips organized by {props.currentUser.first_name}</h2>
+    <Trips data={props.trips} key={props.trips} />
+
+  <h2>Trips {props.currentUser.first_name} is attending</h2>
+    <Trips data={props.travelTrips} key={props.travelTrips} />
   </div>
 )
 

@@ -3,7 +3,9 @@
 <%= content_tag :div,
   id: "all-trips",
   data: {
-    trips: @trips,
+    trips: @organized_trips,
+    currentUser: current_user,
+    travelTrips: @travelling_trips,
     travellers: @travellers
 }.to_json do %>
 <% end %>
