@@ -1,5 +1,6 @@
 html {
   background-color: #D8E8DF;
+  margin: 0;
 }
 
 body {
@@ -37,6 +38,7 @@ nav li a {
 }
 
 input[type=submit], button {
+  background-color: transparent;
   box-sizing: border-box;
   outline: 0;
   border: 0;
@@ -119,34 +121,37 @@ CSS Grid layout for wider screens, when browser supports grid:
       font-size: 2em;
       text-align: center;
     }
-
-    h1 {
-      font-size: 100px;
-    }
-
   }
 
   @media screen and (min-width: 1200px) {
+    #trip-info {
+      box-sizing: border-box;
+      padding: 30px;
+    }
 
+    #navigation-bar li {
+      padding: 10px;
+    }
     .footer {
       background-color: blue;
       padding: 20px;
       color: #fff;
       font-family: sans-serif;
       text-align: center;
+    }
 
+    .page-title h1{
+      margin: 0;
     }
 
     .page-title {
-      background-color: purple;
+      background-color: #EA6E34;
       padding: 20px;
+      padding-left: 80px;
+      color: #fff;
       box-sizing: border-box;
       grid-area: header;
-    }
-
-    .page-title h1 {
-      margin: 0;
-
+      font-size: 30px;
     }
 
     .main-content {
@@ -155,9 +160,6 @@ CSS Grid layout for wider screens, when browser supports grid:
 
     nav.sidebar {
       background-color: red;
-    }
-
-    nav.sidebar {
       grid-area: sidebar;
     }
     .footer {
@@ -170,7 +172,7 @@ CSS Grid layout for wider screens, when browser supports grid:
 
     .site {
       display: grid;
-      grid-template-columns: 1fr 3fr;
+      grid-template-columns: 1fr 5fr;
       grid-rows: auto;
       grid-template-areas:
         "header header"

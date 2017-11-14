@@ -26,7 +26,7 @@ class NewTravelgroup extends React.Component {
 
   handleNewTravelgroupSubmit() {
     var form = new FormData(document.getElementById('travelgroup-new-form'))
-    fetch("http://localhost:3000/trips/"+ this.state.trip.id +"/travelgroupings/new", {
+    fetch({
       method: "POST",
      headers: {'X-CSRF-Token': token
       },

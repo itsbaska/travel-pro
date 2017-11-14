@@ -1,13 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
-import Trips from '../components/Trips'
 
 
 
 const Trip = props => (
   <div>
-    <Trips data={props.trips}/>
   </div>
 )
 

@@ -30,7 +30,7 @@ class NewTrip extends React.Component {
 
   handleNewTripSubmit() {
     var form = new FormData(document.getElementById('trip-new-form'))
-    fetch("http://localhost:3000/trips/new", {
+    fetch({
       method: "POST",
      headers: {'X-CSRF-Token': token
       },
