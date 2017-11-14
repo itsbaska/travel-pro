@@ -30,7 +30,7 @@ class NewInbound extends React.Component {
 
   handleNewInboundSubmit(){
     var form = new FormData(document.getElementById('inbound-new-form'))
-    fetch("http://localhost:3000/trips/"+ this.state.trip.id +"/inbounds/new", {
+    fetch({
       method: "POST",
       headers: {'X-CSRF-Token': token},
       body: form

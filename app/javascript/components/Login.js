@@ -22,7 +22,7 @@ class Login extends React.Component {
   handleLoginForm() {
 
     var form = new FormData(document.getElementById('login-form'))
-    fetch('http://localhost:3000/login', {
+    fetch({
       method: "POST",
       headers: {'X-CSRF-Token': token
       },
