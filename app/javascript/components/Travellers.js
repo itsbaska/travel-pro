@@ -21,7 +21,7 @@ class Travellers extends React.Component {
 
   render () {
     return (
-      <ul>
+      <ul className="traveller-list">
         {this.state.travellers}
       </ul>
     );

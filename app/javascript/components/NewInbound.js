@@ -2,7 +2,6 @@ import React from "react"
 import PropTypes from "prop-types"
 import Errors from "./Errors.js"
 
-
 class NewInbound extends React.Component {
   constructor(props) {
     super(props)
