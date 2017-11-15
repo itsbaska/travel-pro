@@ -60,8 +60,8 @@ class NewTrip extends React.Component {
           <label htmlFor="end_date">End Date:</label>
           <input type="date" name="end_date" onChange={this.handleNewTripChange}/>
 
-          <label htmlFor="budget">Budget: $</label>
-          <input type="text" name="budget" onChange={this.handleNewTripChange} placeholder="0.01"/>
+          <label htmlFor="budget">Budget: </label>
+          <input type="text" name="budget" onChange={this.handleNewTripChange} placeholder="$0.01"/>
 
           <input type="submit" value="Save" />
         </form>
@@ -84,8 +84,8 @@ class NewTrip extends React.Component {
           <label htmlFor="end_date">End Date:</label>
           <input type="date" name="end_date" onChange={this.handleNewTripChange}/>
 
-          <label htmlFor="budget">Budget: $</label>
-          <input type="text" name="budget" onChange={this.handleNewTripChange} placeholder="0.01"/>
+          <label htmlFor="budget">Budget: </label>
+          <input type="text" name="budget" onChange={this.handleNewTripChange} placeholder="$0.01"/>
 
           <input type="submit" value="Save" />
         </form>

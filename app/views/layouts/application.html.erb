@@ -12,9 +12,6 @@
   </head>
   <body>
   <div class="site">
-      <div class="page-title">
-        <a href="/"><h1>travel pro&ensp;<i class="fa fa-plane" aria-hidden="true"></i></h1></a>
-      </div>
     <%= javascript_pack_tag 'navigation' %>
     <%= content_tag :div,
       id: "navigation-bar",
@@ -26,6 +23,5 @@
       <%= yield %>
       <footer class="footer">Copyright Travel Pro</footer>
     </div>
-
   </body>
 </html>
