@@ -42,9 +42,21 @@ input[type=submit], button {
   box-sizing: border-box;
   outline: 0;
   border: 0;
-  width: 100%;
 }
 
+
+a:link {
+  text-decoration: none;
+}
+
+/*
+#DFF0E6
+#69D3D9
+#00A7B3
+#08457B dark blue
+#EA6E34 orange
+#FFC059
+*/
 /*--------------------------------------------------------------
 If no grid support, limit width to 50em and center align
 --------------------------------------------------------------*/
@@ -63,22 +75,54 @@ CSS Grid layout for wider screens, when browser supports grid:
 
 @supports (display: grid) {
 
-  @media screen and (min-width: 320px) {
+  @media screen and (min-width: 420px) {
     html {
       background-color: #fff;
+      height: 100%;
     }
 
-    body {
-      background-color: transparent;
-    }
-    .trips-list li {
-      padding: 50px;
+    .page-title a:link h1, a:visited {
+      margin: 0;
+      color: #fff;
+      text-decoration: none;
     }
 
     .page-title {
-      background-color: yellow;
-      margin: 0;
+      font-size: 3em;
+      background-color: #EA6E34;
+      color: #fff;
+      padding: 40px;
+      text-align: center;
     }
+
+    .menu li {
+      font-size: 2.5em;
+      text-align: center;
+      padding: 10px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+    }
+
+    .menu a:visited {
+      color: #fff;
+    }
+
+    .menu .home {
+      background-color: #DFF0E6;
+    }
+
+    .menu .dashboard-button {
+      background-color: #69D3D9;
+    }
+
+    .create-trip-button {
+      background-color: #08457B;
+    }
+
+    .create-trip-button button {
+      color: #fff;
+    }
+
     .trip-item {
       padding: 0 10px;
       font-size: .7em;
@@ -86,6 +130,11 @@ CSS Grid layout for wider screens, when browser supports grid:
 
     ul {
       padding: 0;
+    }
+
+    .trips-list li {
+      padding: 50px;
+      font-size: 2em;
     }
 
     .trips-list p {
@@ -99,6 +148,11 @@ CSS Grid layout for wider screens, when browser supports grid:
 
     .fa-map-marker {
       color: #E36B32;
+    }
+
+    .footer {
+      bottom: 0;
+      font-size: 1.5em;
     }
 
     .trip-name a {
