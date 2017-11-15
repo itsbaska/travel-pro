@@ -46,8 +46,8 @@ class NewInbound extends React.Component {
         <input type="hidden" name="authenticity_token" value={this.state.token} readOnly={true} />
 
           <h2>Add Booking Info</h2>
-          <Errors>{this.state.errors}</Errors>
           <h4>Inbound</h4>
+          <Errors>{this.state.errors}</Errors>
 
           <label htmlFor="airport">Airport:</label>
           <input type="text" name="airport" onChange={this.handleNewInboundChange} />
