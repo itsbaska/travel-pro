@@ -7,7 +7,6 @@ import superagent from 'superagent'
 
 class ReceiptForm extends React.Component {
   constructor(props) {
-    console.log(props)
     super(props)
 
       this.state = {
@@ -44,8 +43,8 @@ class ReceiptForm extends React.Component {
   uploadFile(files) {
     const image = files[0]
 
-    const cloudName = 'travel-pro2'
-    const url = 'https://api.cloudinary.com/v1_1/'+ cloudName +'/image/upload'
+    const cloudName = 'dwbghyzyd'
+    const url = 'https://api.cloudinary.com/v1_1/'+cloudName+'/image/upload'
     const timestamp = Date.now()/1000
     const uploadPreset = this.props.receipt_name
     const paramsStr = 'timestamp='+timestamp+'&upload_preset='+uploadPreset+this.props.receipt_code

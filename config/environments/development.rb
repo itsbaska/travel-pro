@@ -73,4 +73,11 @@ Rails.application.configure do
           secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
         }
       }
+
+  Cloudinary.config do |config|
+    config.cloud_name = ENV['name']
+    config.api_key = ENV['cloud_key']
+    config.api_secret = ENV['code']
+    config.cdn_subdomain = true
+  end
 end
