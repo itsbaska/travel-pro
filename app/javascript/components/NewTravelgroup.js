@@ -39,7 +39,9 @@ class NewTravelgroup extends React.Component {
     if (this.state.errors.length > 0){
       return (
         <div>
-        <h1>{this.state.errors}</h1>
+
+        <h1>Invite a Traveller</h1>
+          <Errors>{this.state.errors}</Errors>
         <form className="travelgroup-new-form" method="post" action={"/trips/" + this.state.trip.id + "/travelgroupings"} onSubmit={this.handleNewTravelgroupSubmit}>
           <h2>Create New Trip</h2>
           <input type="hidden" name="authenticity_token" value={this.state.token} readOnly={true} />
