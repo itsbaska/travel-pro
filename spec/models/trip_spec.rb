@@ -137,4 +137,22 @@ describe Trip do
       expect(array).to eq([1.3])
     end 
   end 
+
+  describe "associations" do 
+    it { Trip.reflect_on_association(:travelgroupings).macro.should eq(:has_many)}
+
+    it { Trip.reflect_on_association(:receipts).macro.should eq(:has_many)}
+
+
+    it { Trip.reflect_on_association(:organizer).macro.should eq(:belongs_to)}
+
+
+    it { Trip.reflect_on_association(:travellers).macro.should eq(:has_many)}
+
+
+    it { Trip.reflect_on_association(:inbound_flights).macro.should eq(:has_many)}
+
+
+    it { Trip.reflect_on_association(:outbound_flights).macro.should eq(:has_many)}
+  end 
 end 
