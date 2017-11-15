@@ -98,6 +98,7 @@ CSS Grid layout for wider screens, when browser supports grid:
 
     .page-title h1 {
       font-size: 4em;
+      letter-spacing: 5px;
       display: inline-block;
       margin: 0 auto;
     }
@@ -211,14 +212,82 @@ CSS Grid layout for wider screens, when browser supports grid:
       padding: 20px;
     }
 
-    .trip-name a {
+    .trip-name a, .trip-info-text h3 {
       text-decoration: none;
       font-size: 2em;
       font-family: 'Montserrat', sans-serif;
     }
 
-    .trip-name a:visited, a:link {
+    .trip-name a:visited, a:link, .trip-info-text h3 {
       color: #08457B;
+    }
+
+    .trip-info-text h3 {
+      font-size: 4em;
+      margin: 0
+
+    }
+
+    p.trip-organizer {
+      color: gray;
+      font-weight: 300;
+      font-size: 2em;
+    }
+
+    .traveller-item p {
+      margin: 5px 0;
+    }
+
+    .traveller-item {
+      font-size: 2.5em;
+      padding: 25px 0;
+    }
+
+    .traveller-list {
+      margin: 150px 0;
+      padding: 50px;
+      background-color: #DFF0E6;
+    }
+
+    .traveller-list h4 {
+      margin: 0;
+      font-size: 3.5em;
+      text-transform: uppercase;
+    }
+
+    p.trip-text{
+      font-size: 2.5em;
+
+      font-family: 'Lato', sans-serif;
+      font-weight: 400;
+    }
+
+    .chart {
+      font-size: 3em;
+    }
+
+    .trip-info-text {
+      padding: 0 50px;
+    }
+
+
+    .trip-info-buttons {
+      display: inline-block;
+      padding-bottom: 50px;
+      font-size: 2em;
+    }
+
+    .trip-info-buttons a {
+      display: block;
+    }
+
+    .trip-info-text h3 {
+      margin: 100px 0;
+    }
+
+    .trip-budget {
+      font-size: 3em;
+      size: red;
     }
 
     .secondary-title {
@@ -228,7 +297,7 @@ CSS Grid layout for wider screens, when browser supports grid:
       padding: 50px;
       left: 0;
       right: 0;
-      font-size: 2em;
+      font-size: 3em;
       text-align: center;
     }
   }
