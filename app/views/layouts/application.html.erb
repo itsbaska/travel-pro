@@ -21,7 +21,10 @@
       }.to_json do %>
     <% end %>
       <%= yield %>
-      <footer class="footer">Copyright Travel Pro</footer>
+      <footer class="footer">
+        <p class="copyright">Copyright Travel Pro</p>
+        <p class="gif"><a href="http://gif-yo-weather.herokuapp.com"><i class="fa fa-sun-o" aria-hidden="true">&emsp;</i>Gif Yo Weather</a></p>
+      </footer>
     </div>
   </body>
 </html>

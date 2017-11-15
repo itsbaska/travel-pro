@@ -244,7 +244,7 @@ CSS Grid layout for wider screens, when browser supports grid:
     }
 
     .traveller-list {
-      margin: 150px 0;
+      margin: 70px 0;
       padding: 50px;
       background-color: #DFF0E6;
     }
@@ -257,7 +257,6 @@ CSS Grid layout for wider screens, when browser supports grid:
 
     p.trip-text{
       font-size: 2.5em;
-
       font-family: 'Lato', sans-serif;
       font-weight: 400;
     }
@@ -273,12 +272,33 @@ CSS Grid layout for wider screens, when browser supports grid:
 
     .trip-info-buttons {
       display: inline-block;
-      padding-bottom: 50px;
       font-size: 2em;
     }
 
     .trip-info-buttons a {
       display: block;
+      padding: 20px;
+
+    }
+
+    .gif a {
+      font-size: 1.5em;
+      color: darkgray;
+    }
+
+
+    .copyright {
+      color: darkgray;
+      font-size: 1.5em;
+    }
+
+    .add-info-buttons {
+      padding: 50px;
+    }
+    .add-info-buttons a {
+      display: block;
+      font-size: 2em;
+      padding: 20px;
     }
 
     .trip-info-text h3 {
@@ -289,6 +309,8 @@ CSS Grid layout for wider screens, when browser supports grid:
       font-size: 3em;
       size: red;
     }
+
+
 
     .secondary-title {
       background-color: #69D3D9;
@@ -341,6 +363,7 @@ CSS Grid layout for wider screens, when browser supports grid:
       background-color: red;
       grid-area: sidebar;
     }
+
     .footer {
       grid-area: footer;
     }

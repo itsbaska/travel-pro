@@ -58,6 +58,7 @@ class TripInfo extends React.Component {
           <p className="trip-text">End Date: {this.state.trip.end_date_formatted}</p>
           <p className="trip-budget">Budget: ${this.state.trip.budget}</p>
         </div>
+
         <div className="traveller-list">
           <h4>Travellers</h4>
           <ul>
@@ -68,15 +69,16 @@ class TripInfo extends React.Component {
             <a href={"/trips/" + this.state.trip.id + "/inbounds"}><button>All Inbound Trips</button></a>
           </div>
         </div>
+
         <Chart chartData={this.state.chartData} location={this.state.trip.location} legendPosition="bottom" />
-        <div className="trip-info-buttons-container">
-          <div className="trip-info-buttons">
+
+        <div className="add-info-buttons">
             <a href={"/trips/" + this.state.trip.id + "/travelgroupings/new"}><button>Add Traveller</button></a>
             <a href={"/trips/" + this.state.trip.id + "/receipts/new" }><button className="add-receipt">Add Receipt</button></a>
             <a href={"/trips/" + this.state.trip.id + "/outbounds/new"}><button>Add Outbound Info</button></a>
             <a href={"/trips/" + this.state.trip.id + "/inbounds/new"}><button>Add Inbound Info</button></a>
-          </div>
         </div>
+
       </div>
     );
   }
