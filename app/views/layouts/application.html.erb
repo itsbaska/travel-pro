@@ -7,14 +7,11 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Lato:700|Montserrat:400,900,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400:300|Montserrat:400,900,700" rel="stylesheet">
     <script src="https://use.fontawesome.com/0cfcb9aae2.js"></script>
   </head>
   <body>
   <div class="site">
-      <div class="page-title">
-        <h1>travel pro&ensp;<i class="fa fa-plane" aria-hidden="true"></i></h1>
-      </div>
     <%= javascript_pack_tag 'navigation' %>
     <%= content_tag :div,
       id: "navigation-bar",
@@ -24,8 +21,10 @@
       }.to_json do %>
     <% end %>
       <%= yield %>
-      <footer class="footer">Copyright Travel Pro</footer>
+      <footer class="footer">
+        <p class="copyright">Copyright Travel Pro</p>
+        <p class="gif"><a href="http://gif-yo-weather.herokuapp.com"><i class="fa fa-sun-o" aria-hidden="true">&emsp;</i>Gif Yo Weather</a></p>
+      </footer>
     </div>
-  
   </body>
 </html>

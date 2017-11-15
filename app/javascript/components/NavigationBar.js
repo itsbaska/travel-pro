@@ -8,9 +8,19 @@ class NavigationBar extends React.Component {
     super(args)
     this.state = {
       loggedIn: false,
-      currentUser: ""
+      currentUser: "",
+      menuOpen: false
     }
+    this.handleMenu = this.handleMenu.bind(this)
     this.setNothing = this.setNothing.bind(this)
+  }
+
+  handleMenu() {
+    if (this.state.menuOpen === false) {
+      this.setState({menuOpen: true})
+    } else {
+      this.setState({menuOpen: false})
+    }
   }
 
   setNothing() {
@@ -22,33 +32,29 @@ class NavigationBar extends React.Component {
   }
 
   render () {
-    if (this.state.loggedIn === false) {
-      return (
-      <div>
+    var menuItems = "";
+    if (this.state.loggedIn) {
+      menuItems = (<ul className="menu"><li className="dashboard-button"><a href={"/users/" + this.state.currentUser.id + "/dashboards"}>Dashboard</a></li>
+            <li className="create-trip-button"><a href="/trips/new"><button>Create Trip</button></a></li></ul>)
+    }
+    else {
+      menuItems = (<ul className="menu"><li className="login"><a href='/login'>Login</a></li>
+            <li className="register"><a href='/users/sign_up'>Register</a></li></ul>)
+    }
+
+    return (
+      <div className={ this.state.menuOpen ? "whoosh" : "" } id="menu">
+         <div className="page-title">
+           <button onClick={this.handleMenu}><i className="fa fa-bars" aria-hidden="true"></i></button>
+            <a href="/"><h1>travel pro&ensp;<i className="fa fa-plane" aria-hidden="true"></i></h1></a>
+            <div></div>
+          </div>
         <nav className="sidebar">
-          <ul className="menu">
-            <li><a href='/'>Home</a></li>
-            <li><a href='/login'>Login</a></li>
-            <li><a href='/users/sign_up'>Register</a></li>
-          </ul>
+          { menuItems }
         </nav>
       </div>
 
       )
-    } else {
-      return (
-      <div>
-        <nav className="sidebar">
-          <ul>
-            <li><a href='/'>Home</a></li>
-            <li><a href={"/users/" + this.state.currentUser.id + "/dashboards"}>Dashboard</a></li>
-              <li><a href="/trips/new"><button>Create Trip</button></a></li>
-            <li>< Logout setNothing={this.setNothing}/></li>
-          </ul>
-        </nav>
-      </div>
-      )
-    }
   }
 }
 

@@ -20,13 +20,23 @@ class Trips extends React.Component {
   }
 
   render () {
-    return (
-      <div>
-        <ul>
-          {this.state.trips}
-        </ul>
-      </div>
-    );
+    if (this.state.trips.length === 0) {
+      return (
+        <div>
+          <ul>
+            <li>You have not created any trips yet!</li>
+          </ul>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <ul>
+            {this.state.trips}
+          </ul>
+        </div>
+      );
+    }
   }
 }
 

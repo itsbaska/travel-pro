@@ -42,9 +42,21 @@ input[type=submit], button {
   box-sizing: border-box;
   outline: 0;
   border: 0;
-  width: 100%;
 }
 
+
+a:link {
+  text-decoration: none;
+}
+
+/*
+#DFF0E6
+#69D3D9
+#00A7B3
+#08457B dark blue
+#EA6E34 orange
+#FFC059
+*/
 /*--------------------------------------------------------------
 If no grid support, limit width to 50em and center align
 --------------------------------------------------------------*/
@@ -63,22 +75,82 @@ CSS Grid layout for wider screens, when browser supports grid:
 
 @supports (display: grid) {
 
-  @media screen and (min-width: 320px) {
+  @media screen and (min-width: 420px) {
     html {
       background-color: #fff;
+      height: 100%;
     }
 
-    body {
-      background-color: transparent;
-    }
-    .trips-list li {
-      padding: 50px;
+    .page-title a:link h1, a:visited {
+      margin: 0;
+      color: #fff;
+      text-decoration: none;
     }
 
     .page-title {
-      background-color: yellow;
-      margin: 0;
+      background-color: #EA6E34;
+      color: #fff;
+      padding: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
+
+    .page-title h1 {
+      font-size: 4em;
+      letter-spacing: 5px;
+      display: inline-block;
+      margin: 0 auto;
+    }
+
+    button .fa-bars {
+      font-size: 4em;
+      float: left;
+    }
+
+    .sidebar {
+      max-height: 0;
+      visibility: hidden;
+    }
+
+    .whoosh > .sidebar {
+      visibility: visible;
+      overflow-y: hidden;
+      max-height: 500px; /* approximate max height */
+
+      transition-property: all;
+      transition-duration: .5s;
+      transition-timing-function: cubic-bezier(0, 1, 0.5, 1)
+    }
+
+    .menu li {
+      font-size: 2.5em;
+      text-align: center;
+      padding: 10px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+    }
+
+    .menu a:visited {
+      color: #fff;
+    }
+
+    .menu .home {
+      background-color: #DFF0E6;
+    }
+
+    .menu .dashboard-button {
+      background-color: #69D3D9;
+    }
+
+    .create-trip-button {
+      background-color: #00A7B3;
+    }
+
+    .create-trip-button button {
+      color: #fff;
+    }
+
     .trip-item {
       padding: 0 10px;
       font-size: .7em;
@@ -86,6 +158,11 @@ CSS Grid layout for wider screens, when browser supports grid:
 
     ul {
       padding: 0;
+    }
+
+    .trips-list li {
+      padding: 50px;
+      font-size: 2em;
     }
 
     .trips-list p {
@@ -101,15 +178,139 @@ CSS Grid layout for wider screens, when browser supports grid:
       color: #E36B32;
     }
 
-    .trip-name a {
+    .trip-new-form {
+      padding: 50px 100px;
+    }
+
+    .trip-new-form label {
+      display: block;
+      font-size: 2em;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .trip-new-form input {
+      border: solid 1px lightgrey;
+      padding: 20px;
+      width: 100%;
+      margin: 30px 0;
+      margin-bottom: 60px;
+      font-size: 2em;
+      box-sizing: border-box;
+      border-radius: 15px;
+    }
+
+    .trip-new-form input[type=submit] {
+      background-color: #EA6E34;
+      color: #fff;
+    }
+
+
+    .footer {
+      bottom: 0;
+      font-size: 1.5em;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .trip-name a, .trip-info-text h3 {
       text-decoration: none;
       font-size: 2em;
       font-family: 'Montserrat', sans-serif;
     }
 
-    .trip-name a:visited, a:link {
+    .trip-name a:visited, a:link, .trip-info-text h3 {
       color: #08457B;
     }
+
+    .trip-info-text h3 {
+      font-size: 4em;
+      margin: 0
+
+    }
+
+    p.trip-organizer {
+      color: gray;
+      font-weight: 300;
+      font-size: 2em;
+    }
+
+    .traveller-item p {
+      margin: 5px 0;
+    }
+
+    .traveller-item {
+      font-size: 2.5em;
+      padding: 25px 0;
+    }
+
+    .traveller-list {
+      margin: 70px 0;
+      padding: 50px;
+      background-color: #DFF0E6;
+    }
+
+    .traveller-list h4 {
+      margin: 0;
+      font-size: 3.5em;
+      text-transform: uppercase;
+    }
+
+    p.trip-text{
+      font-size: 2.5em;
+      font-family: 'Lato', sans-serif;
+      font-weight: 400;
+    }
+
+    .chart {
+      font-size: 3em;
+    }
+
+    .trip-info-text {
+      padding: 0 50px;
+    }
+
+
+    .trip-info-buttons {
+      display: inline-block;
+      font-size: 2em;
+    }
+
+    .trip-info-buttons a {
+      display: block;
+      padding: 20px;
+
+    }
+
+    .gif a {
+      font-size: 1.5em;
+      color: darkgray;
+    }
+
+
+    .copyright {
+      color: darkgray;
+      font-size: 1.5em;
+    }
+
+    .add-info-buttons {
+      padding: 50px;
+    }
+    .add-info-buttons a {
+      display: block;
+      font-size: 2em;
+      padding: 20px;
+    }
+
+    .trip-info-text h3 {
+      margin: 100px 0;
+    }
+
+    .trip-budget {
+      font-size: 3em;
+      size: red;
+    }
+
+
 
     .secondary-title {
       background-color: #69D3D9;
@@ -118,7 +319,7 @@ CSS Grid layout for wider screens, when browser supports grid:
       padding: 50px;
       left: 0;
       right: 0;
-      font-size: 2em;
+      font-size: 3em;
       text-align: center;
     }
   }
@@ -162,6 +363,7 @@ CSS Grid layout for wider screens, when browser supports grid:
       background-color: red;
       grid-area: sidebar;
     }
+
     .footer {
       grid-area: footer;
     }
