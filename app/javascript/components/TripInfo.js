@@ -55,6 +55,8 @@ class TripInfo extends React.Component {
         <h3>{this.state.trip.name}</h3>
         <h4>organized by: {this.state.trip.organizer_name}</h4>
         <p>Location: {this.state.trip.location}</p>
+        <p>Start Date: {this.state.trip.start_date_formatted}</p>
+        <p>End Date: {this.state.trip.end_date_formatted}</p>
         <p>Budget: ${this.state.trip.budget}</p>
 
         <h4>Travellers</h4>

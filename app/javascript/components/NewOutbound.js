@@ -45,8 +45,8 @@ class NewOutbound extends React.Component {
         <form className="outbound-new-form" method="post" action={"/trips/" + this.state.trip.id + "/outbounds"} onSubmit={this.handleNewOutboundSubmit}>
         <input type="hidden" name="authenticity_token" value={this.state.token} readOnly={true} />
           <h2>Add Booking Info</h2>
-          <Errors>{this.state.errors}</Errors>
           <h4>Outbound</h4>
+          <Errors>{this.state.errors}</Errors>
 
           <label htmlFor="airport">Airport: </label>
           <input type="text" name="airport" onChange={this.handleNewOutboundChange} />
