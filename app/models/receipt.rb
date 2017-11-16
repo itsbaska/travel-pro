@@ -1,5 +1,4 @@
 class Receipt < ApplicationRecord
-  # before_save :float_budget
   before_save :receipt_purchaser
   belongs_to :purchaser, class_name: "User"
   belongs_to :trip
