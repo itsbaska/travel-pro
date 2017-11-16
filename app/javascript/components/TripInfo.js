@@ -28,9 +28,12 @@ class TripInfo extends React.Component {
 
             data: this.props.data.amount,
             backgroundColor: [
-              'rgba(255, 99, 132, 0.6)',
-              'rgba(54, 162, 235, 0.6)',
-              'rgba(255, 200, 100, 0.6)',
+              'rgba(234,110,52, 0.7)',
+              'rgba(0,167,179, 0.7)',
+              'rgba(223,240,230, 0.7)',
+              'rgba(8,69,123, 0.7)',
+              'rgba(105,211,217, 0.7)',
+              'rgba(255,192,89, 0.7)',
             ]
           }
         ]
