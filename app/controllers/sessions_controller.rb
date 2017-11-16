@@ -20,7 +20,6 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
     reset_session
     @current_user = nil
-    p "trying to logout here"
     redirect_to root_path, status: 303
   end
 
