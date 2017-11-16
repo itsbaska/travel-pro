@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 
 
 const Trip = props => (
-  <div>
+  <div className="main-content">
   </div>
 )
 

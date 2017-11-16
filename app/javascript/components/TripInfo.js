@@ -51,16 +51,19 @@ class TripInfo extends React.Component {
     return (
       <div>
         <div className="trip-info-text">
-          <h3>{this.state.trip.name}</h3>
+          <h3 className="trip-info-name">{this.state.trip.name}</h3>
           <p className="trip-organizer">Trip Organizer: {this.state.trip.organizer_name}</p>
           <p className="trip-text"><i className="fa fa-map-marker" aria-hidden="true"></i>  &emsp;{this.state.trip.location}</p>
-          <p className="trip-text">Start Date: {this.state.trip.start_date_formatted}</p>
-          <p className="trip-text">End Date: {this.state.trip.end_date_formatted}</p>
+          <p className="trip-text"><span className="label">Start Date: </span>{this.state.trip.start_date_formatted}</p>
+          <p className="trip-text"><span className="label">End Date: </span>{this.state.trip.end_date_formatted}</p>
           <p className="trip-budget">Budget: ${this.state.trip.budget}</p>
+          <div className="add-info-buttons">
+            <a href={"/trips/" + this.state.trip.id + "/receipts/new" }><button className="add-receipt">Add Receipt</button></a>
+          </div>
         </div>
 
+        <h2 className="secondary-title">Travellers</h2>
         <div className="traveller-list">
-          <h4>Travellers</h4>
           <ul>
             {this.state.travellers}
           </ul>
@@ -74,7 +77,6 @@ class TripInfo extends React.Component {
 
         <div className="add-info-buttons">
             <a href={"/trips/" + this.state.trip.id + "/travelgroupings/new"}><button>Add Traveller</button></a>
-            <a href={"/trips/" + this.state.trip.id + "/receipts/new" }><button className="add-receipt">Add Receipt</button></a>
             <a href={"/trips/" + this.state.trip.id + "/outbounds/new"}><button>Add Outbound Info</button></a>
             <a href={"/trips/" + this.state.trip.id + "/inbounds/new"}><button>Add Inbound Info</button></a>
         </div>
