@@ -1,5 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
+import Errors from "./Errors.js"
 
 class NewTravelgroup extends React.Component {
    constructor(props) {
@@ -10,7 +11,7 @@ class NewTravelgroup extends React.Component {
       token: '',
       errors: props.errors || ''
     }
-
+  console.log(this.state.errors)
   this.handleNewTravelgroupChange = this.handleNewTravelgroupChange.bind(this)
   this.handleNewTravelgroupSubmit = this.handleNewTravelgroupSubmit.bind(this)
   }
