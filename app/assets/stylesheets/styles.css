@@ -64,6 +64,7 @@ a:link {
   letter-spacing: 2px;
   display: inline-block;
   margin: 0 auto;
+  text-shadow: 1px 1px #ad410f;
 }
 
 button .fa-bars {
@@ -124,21 +125,21 @@ button .fa-bars {
 
 /*-------------------------------------------*/
 
-.login-form, .register-form {
+.login-form, .register-form, .travelgroup-new-form {
   box-sizing: border-box;
   padding: 25px;
 }
 
-.login-form h2, .register-form h2 {
+.login-form h2, .register-form h2, {
   color: #69D3D9 ;
   text-align: center;
 }
 
-.login-form label, .register-form label {
+.login-form label, .register-form label, .travelgroup-new-form label{
   display: block;
 }
 
-.login-form input, .register-form input {
+.login-form input, .register-form input, .travelgroup-new-form input {
   box-sizing: border-box;
   border: solid 1px lightgrey;
   padding: 10px;
@@ -151,13 +152,13 @@ button .fa-bars {
 
 }
 
-.login-form input[type="email"]::-webkit-input-placeholder {
+.login-form input[type="email"]::-webkit-input-placeholder, .travelgroup-new-form input[type="email"]::-webkit-input-placeholder,{
   color: lightgray;
   font-style: 'Lato', sans-serif;
   font-weight: 300;
 }
 
-.login-form button[type="submit"], .register-form button[type="submit"]{
+.login-form button[type="submit"], .register-form button[type="submit"] {
   background-color: red;
   outline: 0;
   border: 0;
@@ -173,13 +174,8 @@ button .fa-bars {
   min-height: 100%;
 }
 
-.trip-list {
-  padding: 0 10px;
-}
-
 .trip-item {
-  padding: 0 25px;
-  margin-bottom: 40px;
+  padding: 20px 25px;
 }
 
 
@@ -190,6 +186,7 @@ h2.secondary-title {
   font-size: 1em;
   padding: 10px;
   margin: 0;
+  text-shadow: 1px 1px #00A7B3;
 }
 
 .column-1 {
@@ -298,6 +295,10 @@ p.trip-organizer {
   padding: 25px;
 }
 
+button {
+  text-shadow: 1px 1px #00A7B3;
+}
+
 .traveller-list h4 {
   background-color: #69D3D9;
   color: #fff;
@@ -319,7 +320,7 @@ p.trip-organizer {
   font-size: 1em;
 }
 
-.trip-info-buttons button, .add-info-buttons button {
+.trip-info-buttons button, .add-info-buttons button,  .travelgroup-new-form input[type=submit] {
   width: 70%;
   padding: 10px;
   border-radius: 5px;
@@ -349,6 +350,30 @@ p.trip-organizer {
 .add-info-buttons a {
   display: block;
   font-size: 1em;
+}
+
+canvas.chartjs-render-monitor {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30em;
+  position: relative;
+  height:100vh;
+}
+
+.trip-flights {
+  padding: 20px 25px;
+}
+
+.trip-flights h4 {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  color: #08457B;
+  margin: 0;
+  font-size: 1em;
+}
+
+.trip-flights p {
+
 }
 
 .footer {

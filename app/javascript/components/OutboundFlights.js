@@ -22,7 +22,7 @@ class OutboundFlights extends React.Component {
   render () {
     return (
       <div>
-      <h2>Outbound Flights</h2>
+      <h2 className="secondary-title">Outbound Flights</h2>
         <ul>
           {this.state.outboundFlights}
         </ul>

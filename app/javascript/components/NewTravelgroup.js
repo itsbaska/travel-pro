@@ -39,15 +39,11 @@ class NewTravelgroup extends React.Component {
     if (this.state.errors.length > 0){
       return (
         <div>
-
-        <h1>Invite a Traveller</h1>
-          <Errors>{this.state.errors}</Errors>
         <form className="travelgroup-new-form" method="post" action={"/trips/" + this.state.trip.id + "/travelgroupings"} onSubmit={this.handleNewTravelgroupSubmit}>
-          <h2>Create New Trip</h2>
           <input type="hidden" name="authenticity_token" value={this.state.token} readOnly={true} />
+          <Errors>{this.state.errors}</Errors>
          <label htmlFor="travellerEmail">Traveller's Email:</label>
-          <input type="text" name="travellerEmail" onChange={this.handleNewTravelgroupChange}/>
-
+          <input type="email" name="travellerEmail" onChange={this.handleNewTravelgroupChange} placeholder="example@email.com" />
           <input type="submit" value="Save" />
         </form>
         </div>
@@ -55,11 +51,9 @@ class NewTravelgroup extends React.Component {
     } else {
       return (
         <form className="travelgroup-new-form" method="post" action={"/trips/" + this.state.trip.id + "/travelgroupings"} onSubmit={this.handleNewTravelgroupSubmit}>
-          <h2>Create New Trip</h2>
           <input type="hidden" name="authenticity_token" value={this.state.token} readOnly={true} />
           <label htmlFor="travellerEmail">Traveller's Email:</label>
-          <input type="text" name="travellerEmail" onChange={this.handleNewTravelgroupChange}/>
-
+          <input type="email" name="travellerEmail" onChange={this.handleNewTravelgroupChange} placeholder="example@email.com" />
           <input type="submit" value="Invite" />
         </form>
       );

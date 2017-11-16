@@ -27,7 +27,7 @@ class Chart extends React.Component {
             title:{
               display: this.props.displayTitle,
               text: "Trip in " + this.props.location,
-              fontSize: 50
+              fontSize: 25
             },
             legend:{
               display: this.props.displayLegend,

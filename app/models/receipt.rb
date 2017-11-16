@@ -10,8 +10,4 @@ class Receipt < ApplicationRecord
   def receipt_purchaser
     self.purchaser_name = self.purchaser.full_name
   end
-
-  # def float_budget
-  #   self.budget = self.budget.round(2)
-  # end
 end

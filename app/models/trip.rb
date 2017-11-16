@@ -60,7 +60,7 @@ class Trip < ApplicationRecord
   end
 
   def purchasers_array
-    self.receipts.map { |receipt| receipt.receipt_purchaser }.unshift("budget")
+    self.receipts.map { |receipt| receipt.receipt_purchaser }.unshift("Remaining Budget")
   end
 
   def data_array

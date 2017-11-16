@@ -21,7 +21,7 @@ class InboundFlights extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className="trip-flights-container">
       <h2>Inbound Flights</h2>
         <ul>
           {this.state.inboundFlights}
