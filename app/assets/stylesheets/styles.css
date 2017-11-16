@@ -72,6 +72,19 @@ button .fa-bars {
   float: left;
 }
 
+.error {
+  color: red;
+  margin-bottom: 30px;
+  font-style: italic;
+  font-size: 0.8em;
+}
+
+.error li {
+  padding-bottom: 10px;
+  list-style: disc;
+  list-style-position: inside;
+}
+
 .sidebar {
   max-height: 0;
   visibility: hidden;
@@ -125,21 +138,21 @@ button .fa-bars {
 
 /*-------------------------------------------*/
 
-.login-form, .register-form, .travelgroup-new-form {
+.login-form, .register-form, .travelgroup-new-form, .inbound-new-form, .outbound-new-form, .trip-new-form, .receipt-form {
   box-sizing: border-box;
   padding: 25px;
 }
 
-.login-form h2, .register-form h2, {
+.login-form h2, .register-form h2, .inbound-new-form h2, .outbound-new-form h2, .trip-new-form h2, .receipt-form h2 {
   color: #69D3D9 ;
   text-align: center;
 }
 
-.login-form label, .register-form label, .travelgroup-new-form label{
+.login-form label, .register-form label, .travelgroup-new-form label, .inbound-new-form label, .outbound-new-form label, .trip-new-form label, .receipt-form label {
   display: block;
 }
 
-.login-form input, .register-form input, .travelgroup-new-form input {
+.login-form input, .register-form input, .travelgroup-new-form input, .inbound-new-form input, .outbound-new-form input, .trip-new-form input, .receipt-form input {
   box-sizing: border-box;
   border: solid 1px lightgrey;
   padding: 10px;
@@ -149,23 +162,40 @@ button .fa-bars {
   font-size: 1em;
   box-sizing: border-box;
   border-radius: 5px;
-
 }
 
-.login-form input[type="email"]::-webkit-input-placeholder, .travelgroup-new-form input[type="email"]::-webkit-input-placeholder,{
+.login-form input[type="email"]::-webkit-input-placeholder, .travelgroup-new-form input[type="email"]::-webkit-input-placeholder, .outbound-new-form input[type="text"]::-webkit-input-placeholder, .inbound-new-form input[type="text"]::-webkit-input-placeholder, .trip-new-form input[type="text"]::-webkit-input-placeholder, .receipt-form input[type="text"]::-webkit-input-placeholder {
   color: lightgray;
   font-style: 'Lato', sans-serif;
   font-weight: 300;
 }
 
-.login-form button[type="submit"], .register-form button[type="submit"] {
-  background-color: red;
+.trip-info-buttons button, .add-info-buttons button,  .travelgroup-new-form input[type=submit], .login-form button[type="submit"], .register-form button[type="submit"], .trip-new-form input[type=submit], .receipt-form button[type=submit] {
+  width: 70%;
+  padding: 10px;
+  border-radius: 5px;
+  display: block;
+  background-color: #69D3D9;
   outline: 0;
   border: 0;
-  width: 50%;
+  margin: 10px auto;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  text-shadow: 1px 1px #00A7B3;
+}
+
+.receipt-drop-zone {
+  box-sizing: border-box;
+  border: dashed 3px lightgrey;
+  padding: 20px;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  font-size: 1em;
+  box-sizing: border-box;
   border-radius: 5px;
-  padding: 10px;
-  margin: 0 auto;
+
 }
 
 /*-------------------------------------------*/
@@ -177,7 +207,6 @@ button .fa-bars {
 .trip-item {
   padding: 20px 25px;
 }
-
 
 h2.secondary-title {
   background-color: #69D3D9;
@@ -236,33 +265,6 @@ p.trip-location {
 
 /*-----------------------------------------------------*/
 
-.trip-new-form {
-  padding: 50px 100px;
-}
-
-.trip-new-form label {
-  display: block;
-  font-size: 2em;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.trip-new-form input {
-  border: solid 1px lightgrey;
-  padding: 20px;
-  width: 100%;
-  margin: 30px 0;
-  margin-bottom: 60px;
-  font-size: 2em;
-  box-sizing: border-box;
-  border-radius: 15px;
-}
-
-.trip-new-form input[type=submit] {
-  background-color: #EA6E34;
-  color: #fff;
-  text-shadow: 1px 1px #00A7B3;
-}
-
 .trip-info-name {
   text-transform: uppercase;
   text-decoration: none;
@@ -295,10 +297,6 @@ p.trip-organizer {
   padding: 25px;
 }
 
-button {
-  text-shadow: 1px 1px #00A7B3;
-}
-
 .traveller-list h4 {
   background-color: #69D3D9;
   color: #fff;
@@ -318,20 +316,6 @@ button {
 
 .chart {
   font-size: 1em;
-}
-
-.trip-info-buttons button, .add-info-buttons button,  .travelgroup-new-form input[type=submit] {
-  width: 70%;
-  padding: 10px;
-  border-radius: 5px;
-  display: block;
-  background-color: #69D3D9;
-  outline: 0;
-  border: 0;
-  margin: 10px auto;
-  font-weight: 700;
-  font-family: 'Montserrat', sans-serif;
-  color: #fff;
 }
 
 .trip-info-buttons a {
