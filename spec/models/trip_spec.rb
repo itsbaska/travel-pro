@@ -3,6 +3,72 @@ require 'rails_helper'
 describe Trip do
   let(:trip) { Trip.new }
 
+
+  describe "validations" do 
+    it "is valid with valid attributes" do 
+      purchaser = User.create(first_name: "Victoria", last_name: "Luc", phone_number: "847-312-4925", email: "victoriajeniluc@gmail.com", password: "password")
+
+      trip = Trip.create(name: "Reunion", location: "DBC", budget: 1.30, start_date: Date.strptime("1/17/2018", "%m/%d/%Y"), end_date: Date.strptime("1/22/2018", "%m/%d/%Y"), organizer: purchaser)
+
+      expect(trip).to be_valid 
+    end 
+
+    it "is not valid without the name" do 
+      purchaser = User.create(first_name: "Victoria", last_name: "Luc", phone_number: "847-312-4925", email: "victoriajeniluc@gmail.com", password: "password")
+
+      trip = Trip.create(name: "", location: "DBC", budget: 1.30, start_date: Date.strptime("1/17/2018", "%m/%d/%Y"), end_date: Date.strptime("1/22/2018", "%m/%d/%Y"), organizer: purchaser)
+      expect(trip).to_not be_valid 
+    end 
+
+    it "is not valid without location" do 
+      purchaser = User.create(first_name: "Victoria", last_name: "Luc", phone_number: "847-312-4925", email: "victoriajeniluc@gmail.com", password: "password")
+
+      trip = Trip.create(name: "Reunion", location: "", budget: 1.30, start_date: Date.strptime("1/17/2018", "%m/%d/%Y"), end_date: Date.strptime("1/22/2018", "%m/%d/%Y"), organizer: purchaser)
+
+      expect(trip).to_not be_valid 
+    end 
+
+    it "is not valid without budget" do 
+      purchaser = User.create(first_name: "Victoria", last_name: "Luc", phone_number: "847-312-4925", email: "victoriajeniluc@gmail.com", password: "password")
+
+      trip = Trip.create(name: "Reunion", location: "DBC", start_date: Date.strptime("1/17/2018", "%m/%d/%Y"), end_date: Date.strptime("1/22/2018", "%m/%d/%Y"), organizer: purchaser)
+
+      expect(trip).to_not be_valid 
+    end 
+
+    it "is not valid without start_date" do 
+      purchaser = User.create(first_name: "Victoria", last_name: "Luc", phone_number: "847-312-4925", email: "victoriajeniluc@gmail.com", password: "password")
+
+      trip = Trip.create(name: "Reunion", location: "DBC", budget: 1.30, end_date: Date.strptime("1/22/2018", "%m/%d/%Y"), organizer: purchaser)
+
+      expect(trip).to_not be_valid 
+    end 
+
+    it "is not valid without end_date" do 
+      purchaser = User.create(first_name: "Victoria", last_name: "Luc", phone_number: "847-312-4925", email: "victoriajeniluc@gmail.com", password: "password")
+
+      trip = Trip.create(name: "Reunion", location: "DBC", budget: 1.30, start_date: Date.strptime("1/17/2018", "%m/%d/%Y"), organizer: purchaser)
+
+      expect(trip).to_not be_valid 
+    end 
+
+    it "is not valid without a purchaser" do 
+      purchaser = User.create(first_name: "Victoria", last_name: "Luc", phone_number: "847-312-4925", email: "victoriajeniluc@gmail.com", password: "password")
+
+      trip = Trip.create(name: "Reunion", location: "DBC", budget: 1.30, start_date: Date.strptime("1/17/2018", "%m/%d/%Y"), end_date: Date.strptime("1/22/2018", "%m/%d/%Y"))
+
+      expect(trip).to_not be_valid 
+    end 
+
+    it "is validates the budget" do 
+      purchaser = User.create(first_name: "Victoria", last_name: "Luc", phone_number: "847-312-4925", email: "victoriajeniluc@gmail.com", password: "password")
+
+      trip = Trip.create(name: "Reunion", location: "DBC", budget: 1.30, start_date: Date.strptime("1/17/2018", "%m/%d/%Y"), end_date: Date.strptime("1/22/2018", "%m/%d/%Y"), organizer: purchaser)
+
+      expect(trip.budget > 0).to be_truthy
+    end 
+  end 
+  
   describe "organizer_person" do
     it "returns the full name of the organizer" do
       user = User.create(first_name: "Victoria", last_name: "Luc", phone_number: "847-312-4925", email: "victoriajeniluc@gmail.com", password: "password")
