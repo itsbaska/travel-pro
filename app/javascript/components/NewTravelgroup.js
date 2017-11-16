@@ -43,9 +43,9 @@ class NewTravelgroup extends React.Component {
         <form className="travelgroup-new-form" method="post" action={"/trips/" + this.state.trip.id + "/travelgroupings"} onSubmit={this.handleNewTravelgroupSubmit}>
           <input type="hidden" name="authenticity_token" value={this.state.token} readOnly={true} />
           <Errors>{this.state.errors}</Errors>
-         <label htmlFor="travellerEmail">Traveller's Email:</label>
+          <label htmlFor="travellerEmail">Traveller's Email:</label>
           <input type="email" name="travellerEmail" onChange={this.handleNewTravelgroupChange} placeholder="example@email.com" />
-          <input type="submit" value="Save" />
+          <input type="submit" value="Invite" />
         </form>
         </div>
       );
