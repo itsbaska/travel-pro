@@ -42,11 +42,11 @@ a:link {
 
 /*-------------------------------------------*/
 
-.home-page {
-  background-image: url("../images/home_photo.jpeg")
-  background-repeat: no-repeat;
-  background-size: 100% auto;
+#all-trips {
+  background-size: cover;
+  background-image: url("https://slack-imgs.com/?c=1&url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1480504612934-8170966f69e0%3Fixlib%3Drb-0.3.5%26q%3D80%26fm%3Djpg%26crop%3Dentropy%26cs%3Dtinysrgb%26w%3D1080%26fit%3Dmax%26s%3D866ab1e975cd22a154d01d281f6a9fe5")
 }
+
 
 /*-------------------------------------------*/
 
@@ -147,6 +147,33 @@ button .fa-bars {
 .create-trip-button button {
   color: #fff;
 }
+
+/*---------------------------------*/
+
+#all-trips {
+  margin: 0 auto;
+  height: 460px;
+}
+
+.button-container {
+  position: absolute;
+}
+.login-button, .register-button {
+  margin: 0 auto;
+  background-color: #69D3D9;
+  outline: 0;
+  border: 0;
+  padding: 10px;
+  width: 150px;
+  display: block;
+  box-sizing: border-box;
+  margin: 90px;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
 
 /*-------------------------------------------*/
 
@@ -407,6 +434,28 @@ canvas.chartjs-render-monitor {
 
 @media screen and (min-width: 800px) {
     @supports (display: grid) {
+
+  .button-container {
+    margin: 200px auto;
+  }
+
+  .home-page button {
+    background-color: #69D3D9;
+    outline:0;
+    border: 0;
+    padding: 20px;
+    color: #fff;
+    width: 200px;
+    box-sizing: border-box;
+    display: block;
+    margin: 100px auto;
+  }
+
+
+  #all-trips {
+    background-size: cover;
+    background-image: url("https://slack-imgs.com/?c=1&url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1480504612934-8170966f69e0%3Fixlib%3Drb-0.3.5%26q%3D80%26fm%3Djpg%26crop%3Dentropy%26cs%3Dtinysrgb%26w%3D1080%26fit%3Dmax%26s%3D866ab1e975cd22a154d01d281f6a9fe5")
+  }
 
     body {
       background-color: #fff
