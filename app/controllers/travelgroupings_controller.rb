@@ -14,7 +14,7 @@ class TravelgroupingsController < ApplicationController
     	InviteMailer.invite_email(@traveller, @trip).deliver
     	redirect_to @trip
     else
-    	render component: 'NewTravelgroup', props: { errors: "Traveller is not found!", trip: @trip}
+    	render component: 'NewTravelgroup', props: { errors: ["Traveller is not found!"], trip: @trip}
     end
   end
 end

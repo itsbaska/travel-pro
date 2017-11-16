@@ -5,20 +5,20 @@ import Trips from '../components/Trips'
 
 
 const Trip = props => (
-  <div>
   <div className="main-content">
     <div className="trips-list">
+
     <div className="column-1">
-      <h2 className="secondary-title">Trips rganized by {props.currentUser.first_name}</h2>
-        <Trips data={props.trips} key={props.trips} />
+        <h2 className="secondary-title">Trips organized by {props.currentUser.first_name}</h2>
+      <Trips data={props.trips} key={props.trips} />
     </div>
+
     <div className="column-2">
-      <h2 className="secondary-title">Trips {props.currentUser.first_name} is attending</h2>
+        <h2 className="secondary-title">Trips {props.currentUser.first_name} is attending</h2>
       <Trips data={props.travelTrips} key={props.travelTrips} />
       </div>
     </div>
   </div>
-</div>
 
 )
 

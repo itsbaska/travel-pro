@@ -33,8 +33,7 @@ class Login extends React.Component {
   render () {
     if (this.state.error.length > 0 ) {
       return (
-        <div>
-
+        <div className="main-content">
         <form className="login-form" onSubmit={this.handleLoginForm} method="post" action="/sessions">
           <h2>Login</h2>
 
@@ -43,7 +42,7 @@ class Login extends React.Component {
           </ul>
 
           <label htmlFor="email">Email</label>
-          <input type="email" name="email" onChange={this.handleLoginChange} />
+          <input type="email" name="email" onChange={this.handleLoginChange} placeholder="example@email.com" />
 
           <label htmlFor="password">Password</label>
           <input type="password" name="password" onChange={this.handleLoginChange} />
@@ -54,17 +53,19 @@ class Login extends React.Component {
         )
       } else {
         return (
-        <form className="login-form" onSubmit={this.handleLoginForm} method="post" action="/sessions">
-          <h2>Login</h2>
+        <div className="main-content">
+          <form className="login-form" onSubmit={this.handleLoginForm} method="post" action="/sessions">
+            <h2>Login</h2>
 
-          <label htmlFor="email">Email</label>
-          <input type="email" name="email" onChange={this.handleLoginChange} />
+            <label htmlFor="email">Email</label>
+            <input type="email" name="email" onChange={this.handleLoginChange} placeholder="example@email.com" />
 
-          <label htmlFor="password">Password</label>
-          <input type="password" name="password" onChange={this.handleLoginChange} />
+            <label htmlFor="password">Password</label>
+            <input type="password" name="password" onChange={this.handleLoginChange} />
 
-          <button type="submit">Login</button>
-        </form>
+            <button type="submit">Login</button>
+          </form>
+        </div>
       )
     }
   }

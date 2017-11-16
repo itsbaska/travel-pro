@@ -4,9 +4,10 @@ import PropTypes from 'prop-types'
 import NewTravelgroup from '../components/NewTravelgroup'
 
 const TravelgroupNew = props => (
-	<div> 
-		<NewTravelgroup data={props.trip}/> 
-	</div> 
+  <div>
+    <h2 className="secondary-title">Invite a Traveller</h2>
+		<NewTravelgroup data={props.trip}/>
+	</div>
 )
 
 document.addEventListener('DOMContentLoaded', () => {
