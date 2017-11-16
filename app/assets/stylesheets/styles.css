@@ -263,6 +263,7 @@ p.trip-location {
 .trip-new-form input[type=submit] {
   background-color: #EA6E34;
   color: #fff;
+  text-shadow: 1px 1px #00A7B3;
 }
 
 .trip-info-name {
