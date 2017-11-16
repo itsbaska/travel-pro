@@ -8,7 +8,7 @@ const Trip = props => (
   <div className="main-content home-page">
     <div className="button-container">
       <a href="/login"><button className="login-button">Login</button></a>
-      <a href="/sign-up"><button className="register-button">Register</button></a>
+      <a href="/users/sign_up"><button className="register-button">Register</button></a>
     </div>
   </div>
 )
