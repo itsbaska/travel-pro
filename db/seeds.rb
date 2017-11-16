@@ -5,42 +5,61 @@ Travelgrouping.destroy_all
 Outbound.destroy_all
 Inbound.destroy_all
 
-User.create(first_name: "Vikky", last_name: "Luc", email: "vikky@gmail.com", phone_number: "847-312-4925", password: "password")
-User.create(first_name: "Baska", last_name: "Batbold", email: "bb@gmail.com", phone_number: "847-123-1234", password: "password")
+User.create(first_name: "Vikky", last_name: "Luc", email: "victoriajeniluc@gmail.com", phone_number: "847-312-4925", password: "password")
+User.create(first_name: "Baska", last_name: "Batbold", email: "baskabatboldb@gmail.com", phone_number: "312-998-3506", password: "password")
 User.create(first_name: "Melissa", last_name: "Kanhirun", email: "mk7run@gmail.com", phone_number: "847-970-1782", password: "password")
-User.create(first_name: "Marla", last_name: "Kallstrom", email: "mk-j@gmail.com", phone_number: "571-416-7561", password: "password")
-User.create(first_name: "Austy", last_name: "Ratcliff", email: "austin@gmail.com", phone_number: "312-569-7223", password: "password")
-User.create(first_name: "Sam", last_name: "Tietze", email: "samtietze@gmail.com", phone_number: "312-476-0921", password: "password")
+User.create(first_name: "Marla", last_name: "Kallstrom", email: "brandykou@gmail.com", phone_number: "914-482-7293", password: "password")
+User.create(first_name: "Austin", last_name: "Ratcliff", email: "austinratcliff@icloud.com", phone_number: "312-569-7223", password: "password")
+User.create(first_name: "Sam", last_name: "Tietze", email: "samtietze@gmail.com", phone_number: "651-408-4874", password: "password")
 User.create(first_name: "Dan", last_name: "Ioppolo", email: "dan.ioppolo@gmail.com", phone_number: "773-145-2232", password: "password")
 User.create(first_name: "Charlie", last_name: "Weber", email: "cweber648@gmail.com", phone_number: "773-231-8736", password: "password")
-User.create(first_name: "George", last_name: "Barefoot", email: "barefoot.george8@gmail.com", phone_number: "773-857-3416", password: "password")
 
-Trip.create(name: "Conversation Partner Convention", location: "Japan", budget: 538.90, organizer_id: 4, start_date: Date.strptime("11/25/2017", "%m/%d/%Y"), end_date: Date.strptime("11/30/2017", "%m/%d/%Y")) #marla
-Trip.create(name: "Squad Goals Meetup", location: "Alabama", budget: 78.03, organizer_id: 5, start_date: Date.strptime("11/17/2017", "%m/%d/%Y"), end_date: Date.strptime("11/25/2017", "%m/%d/%Y")) #austin
-Trip.create(name: "Kickball Wednesday", location: "Rocky Mountains", budget: 32.50, organizer_id: 6, start_date: Date.strptime("12/1/2017", "%m/%d/%Y"), end_date: Date.strptime("12/15/2017", "%m/%d/%Y")) #sam
-Trip.create(name: "Chartable Council", location: "DC", budget: 3322.50, organizer_id: 7, start_date: Date.strptime("12/10/2017", "%m/%d/%Y"), end_date: Date.strptime("12/17/2017", "%m/%d/%Y")) #dan
-Trip.create(name: "Slow Your Scroll Clambake", location: "Florida", budget: 200.00, organizer_id: 8, start_date: Date.strptime("1/10/2018", "%m/%d/%Y"), end_date: Date.strptime("1/17/2018", "%m/%d/%Y")) #charlie
-Trip.create(name: "Battlecats Powwow", location: "Catlandia", budget: 0.25, organizer_id: 6, start_date: Date.strptime("1/17/2018", "%m/%d/%Y"), end_date: Date.strptime("1/22/2018", "%m/%d/%Y")) #sam
-Trip.create(name: "DBC Reunion", location: "Not Dougans", budget: 300.00, organizer_id: 9, start_date: Date.strptime("11/17/2019", "%m/%d/%Y"), end_date: Date.strptime("11/18/2019", "%m/%d/%Y"))
+Trip.create(name: "Travel-pro Vacation", location: "Morocco", budget: 10000.98, organizer_id: 2, start_date: Date.strptime("6/25/2018", "%m/%d/%Y"), end_date: Date.strptime("7/05/2018", "%m/%d/%Y")) #marla
+Trip.create(name: "DBC Red Pandas Graduation", location: "West End", budget: 250.03, organizer_id: 5, start_date: Date.strptime("11/17/2017", "%m/%d/%Y"), end_date: Date.strptime("11/18/2017", "%m/%d/%Y")) #austin
+Trip.create(name: "Kickball Wednesday Comeback", location: "Chicago", budget: 100.75, organizer_id: 6, start_date: Date.strptime("5/9/2018", "%m/%d/%Y"), end_date: Date.strptime("5/10/2018", "%m/%d/%Y")) #sam
+Trip.create(name: "DBC Reunion", location: "Not Dougan's", budget: 300.58, organizer_id: 6, start_date: Date.strptime("12/7/2019", "%m/%d/%Y"), end_date: Date.strptime("12/18/2019", "%m/%d/%Y"))
 
-travelg1 = Travelgrouping.create(trip_id: 1, traveller_id: 1)
-travelg2 = Travelgrouping.create(trip_id: 1, traveller_id: 3)
-travelg3 = Travelgrouping.create(trip_id: 2, traveller_id: 2)
-travelg4 = Travelgrouping.create(trip_id: 2, traveller_id: 3)
-travelg5 = Travelgrouping.create(trip_id: 3, traveller_id: 1)
-travelg6 = Travelgrouping.create(trip_id: 3, traveller_id: 2)
+Travelgrouping.create(trip_id: 1, traveller_id: 1)
+Travelgrouping.create(trip_id: 1, traveller_id: 2)
+Travelgrouping.create(trip_id: 1, traveller_id: 3)
+Travelgrouping.create(trip_id: 2, traveller_id: 1)
+Travelgrouping.create(trip_id: 2, traveller_id: 2)
+Travelgrouping.create(trip_id: 2, traveller_id: 3)
+Travelgrouping.create(trip_id: 2, traveller_id: 4)
+Travelgrouping.create(trip_id: 2, traveller_id: 5)
+Travelgrouping.create(trip_id: 2, traveller_id: 6)
+Travelgrouping.create(trip_id: 2, traveller_id: 7)
+Travelgrouping.create(trip_id: 2, traveller_id: 8)
+Travelgrouping.create(trip_id: 3, traveller_id: 1)
+Travelgrouping.create(trip_id: 3, traveller_id: 2)
+Travelgrouping.create(trip_id: 3, traveller_id: 3)
+Travelgrouping.create(trip_id: 3, traveller_id: 6)
+Travelgrouping.create(trip_id: 3, traveller_id: 8)
+Travelgrouping.create(trip_id: 5, traveller_id: 1)
+Travelgrouping.create(trip_id: 5, traveller_id: 2)
+Travelgrouping.create(trip_id: 5, traveller_id: 3)
+Travelgrouping.create(trip_id: 5, traveller_id: 4)
+Travelgrouping.create(trip_id: 5, traveller_id: 5)
+Travelgrouping.create(trip_id: 5, traveller_id: 6)
+Travelgrouping.create(trip_id: 5, traveller_id: 7)
+Travelgrouping.create(trip_id: 5, traveller_id: 8)
 
-Outbound.create(airline: "Southwest", arrival: DateTime.strptime("11/25/2017 17:00", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("12/5/2017 11:00", "%m/%d/%Y %H:%M"), airport: "Midway", travelgrouping_id: 1)
-Outbound.create(airline: "Southwest", arrival: DateTime.strptime("11/17/2017 17:00", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("12/1/2017 11:00", "%m/%d/%Y %H:%M"), airport: "Midway", travelgrouping_id: 3)
-Outbound.create(airline: "Southwest", arrival: DateTime.strptime("11/23/2017 12:00", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("12/10/2017 15:00", "%m/%d/%Y %H:%M"), airport: "Midway", travelgrouping_id: 2)
-Outbound.create(airline: "Southwest", arrival: DateTime.strptime("11/19/2017 17:00", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("12/12/2017 11:00", "%m/%d/%Y %H:%M"), airport: "Midway", travelgrouping_id: 4)
-Outbound.create(airline: "Southwest", arrival: DateTime.strptime("11/19/2017 17:00", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("12/12/2017 11:00", "%m/%d/%Y %H:%M"), airport: "Midway", travelgrouping_id: 5)
-Outbound.create(airline: "Southwest", arrival: DateTime.strptime("11/14/2017 17:00", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("12/10/2017 11:00", "%m/%d/%Y %H:%M"), airport: "Midway", travelgrouping_id: 6)
+## VIKKY
+Outbound.create(airline: "Air France", arrival: DateTime.strptime("06/25/2017 19:45", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("06/25/2017 11:05", "%m/%d/%Y %H:%M"), airport: "O'Hare (ORD)", travelgrouping_id: 1)
+Outbound.create(airline: "Air France", arrival: DateTime.strptime("06/26/2017 9:55", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("06/26/2017 12:15", "%m/%d/%Y %H:%M"), airport: "Charles de Gaulle (CDG)", travelgrouping_id: 1)
+Inbound.create(airline: "Transavia-Delta", arrival: DateTime.strptime("07/05/2017 09:35", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("07/05/2017 14:35", "%m/%d/%Y %H:%M"), airport: "Marrakesh Menara Airport (RAK)", travelgrouping_id: 1)
+Inbound.create(airline: "Royal Dutch Airline KLM", arrival: DateTime.strptime("07/05/2017 12:25", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("07/05/2017 13:55", "%m/%d/%Y %H:%M"), airport: "Amsterdam Airport Schiphol (AMS)", travelgrouping_id: 1)
 
-Inbound.create(airline: "Nippon Airlines", arrival: DateTime.strptime("11/25/2017 21:00", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("12/5/2017 16:00", "%m/%d/%Y %H:%M"), airport: "Nippon airport", travelgrouping_id: 1)
+ ## BASKA
+Outbound.create(airline: "Delta", arrival: DateTime.strptime("06/25/2017 9:00", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("06/25/2017 12:18", "%m/%d/%Y %H:%M"), airport: "O'Hare (ORD)", travelgrouping_id: 2)
+Outbound.create(airline: "Air France", arrival: DateTime.strptime("06/25/2017 16:20", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("06/25/2017 5:45", "%m/%d/%Y %H:%M"), airport: "John F. Kennedy Airport (JFK)", travelgrouping_id: 2)
+Outbound.create(airline: "Air France", arrival: DateTime.strptime("06/26/2017 6:50", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("06/26/2017 9:10", "%m/%d/%Y %H:%M"), airport: "Charles de Gaulle (CDG)", travelgrouping_id: 2)
+Inbound.create(airline: "Transavia-Delta", arrival: DateTime.strptime("07/05/2017 09:35", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("07/05/2017 14:35", "%m/%d/%Y %H:%M"), airport: "Marrakesh Menara Airport (RAK)", travelgrouping_id: 2)
+Inbound.create(airline: "Royal Dutch Airline KLM", arrival: DateTime.strptime("07/05/2017 12:25", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("07/05/2017 13:55", "%m/%d/%Y %H:%M"), airport: "Amsterdam Airport Schiphol (AMS)", travelgrouping_id: 2)
 
-Inbound.create(airline: "Taco Airlines", arrival: DateTime.strptime("11/23/2017 17:00", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("12/10/2017 21:00", "%m/%d/%Y %H:%M"), airport: "O'Hare Airport", travelgrouping_id: 2)
 
-Inbound.create(airline: "Arizona Airlines", arrival: DateTime.strptime("11/25/2017 23:00", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("12/5/2017 20:00", "%m/%d/%Y %H:%M"), airport: "Arizona  airport", travelgrouping_id: 3)
-
-Inbound.create(airline: "Arizona Airlines", arrival: DateTime.strptime("11/25/2017 20:00", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("12/5/2017 12:00", "%m/%d/%Y %H:%M"), airport: "Arizona  airport", travelgrouping_id: 4)
+## MELISSA
+Outbound.create(airline: "Delta", arrival: DateTime.strptime("06/25/2017 9:18", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("06/25/2017 11:05", "%m/%d/%Y %H:%M"), airport: "O'Hare (ORD)", travelgrouping_id: 3)
+Outbound.create(airline: "Delta", arrival: DateTime.strptime("06/26/2017 12:05", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("06/26/2017 5:15", "%m/%d/%Y %H:%M"), airport: "Logan International(BOS)", travelgrouping_id: 3)
+Inbound.create(airline: "Transavia-Delta", arrival: DateTime.strptime("07/05/2017 09:35", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("07/05/2017 14:35", "%m/%d/%Y %H:%M"), airport: "Marrakesh Menara Airport (RAK)", travelgrouping_id: 3)
+Inbound.create(airline: "Royal Dutch Airline KLM", arrival: DateTime.strptime("07/05/2017 12:25", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("07/05/2017 13:55", "%m/%d/%Y %H:%M"), airport: "Amsterdam Airport Schiphol (AMS)", travelgrouping_id: 3)
