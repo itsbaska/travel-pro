@@ -45,21 +45,21 @@ Travelgrouping.create(trip_id: 5, traveller_id: 7)
 Travelgrouping.create(trip_id: 5, traveller_id: 8)
 
 ## VIKKY
-Outbound.create(airline: "Air France", arrival: DateTime.strptime("06/25/2017 19:45", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("06/25/2017 11:05", "%m/%d/%Y %H:%M"), airport: "O'Hare (ORD)", travelgrouping_id: 1)
-Outbound.create(airline: "Air France", arrival: DateTime.strptime("06/26/2017 9:55", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("06/26/2017 12:15", "%m/%d/%Y %H:%M"), airport: "Charles de Gaulle (CDG)", travelgrouping_id: 1)
-Inbound.create(airline: "Transavia-Delta", arrival: DateTime.strptime("07/05/2017 09:35", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("07/05/2017 14:35", "%m/%d/%Y %H:%M"), airport: "Marrakesh Menara Airport (RAK)", travelgrouping_id: 1)
-Inbound.create(airline: "Royal Dutch Airline KLM", arrival: DateTime.strptime("07/05/2017 12:25", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("07/05/2017 13:55", "%m/%d/%Y %H:%M"), airport: "Amsterdam Airport Schiphol (AMS)", travelgrouping_id: 1)
+Outbound.create(airline: "Air France", arrival: DateTime.strptime("06/25/2018 19:45", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("06/25/2018 11:05", "%m/%d/%Y %H:%M"), airport: "O'Hare (ORD)", travelgrouping_id: 17)
+Outbound.create(airline: "Air France", arrival: DateTime.strptime("06/26/2018 9:55", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("06/26/2018 12:15", "%m/%d/%Y %H:%M"), airport: "Charles de Gaulle (CDG)", travelgrouping_id: 17)
+Inbound.create(airline: "Transavia-Delta", arrival: DateTime.strptime("07/05/2018 09:35", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("07/05/2018 14:35", "%m/%d/%Y %H:%M"), airport: "Marrakesh Menara Airport (RAK)", travelgrouping_id: 17)
+Inbound.create(airline: "Royal Dutch Airline KLM", arrival: DateTime.strptime("07/05/2018 12:25", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("07/05/2018 13:55", "%m/%d/%Y %H:%M"), airport: "Amsterdam Airport Schiphol (AMS)", travelgrouping_id: 17)
 
  ## BASKA
-Outbound.create(airline: "Delta", arrival: DateTime.strptime("06/25/2017 9:00", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("06/25/2017 12:18", "%m/%d/%Y %H:%M"), airport: "O'Hare (ORD)", travelgrouping_id: 2)
-Outbound.create(airline: "Air France", arrival: DateTime.strptime("06/25/2017 16:20", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("06/25/2017 5:45", "%m/%d/%Y %H:%M"), airport: "John F. Kennedy Airport (JFK)", travelgrouping_id: 2)
-Outbound.create(airline: "Air France", arrival: DateTime.strptime("06/26/2017 6:50", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("06/26/2017 9:10", "%m/%d/%Y %H:%M"), airport: "Charles de Gaulle (CDG)", travelgrouping_id: 2)
-Inbound.create(airline: "Transavia-Delta", arrival: DateTime.strptime("07/05/2017 09:35", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("07/05/2017 14:35", "%m/%d/%Y %H:%M"), airport: "Marrakesh Menara Airport (RAK)", travelgrouping_id: 2)
-Inbound.create(airline: "Royal Dutch Airline KLM", arrival: DateTime.strptime("07/05/2017 12:25", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("07/05/2017 13:55", "%m/%d/%Y %H:%M"), airport: "Amsterdam Airport Schiphol (AMS)", travelgrouping_id: 2)
+Outbound.create(airline: "Delta", arrival: DateTime.strptime("06/25/2018 9:00", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("06/25/2018 12:18", "%m/%d/%Y %H:%M"), airport: "O'Hare (ORD)", travelgrouping_id: 18)
+Outbound.create(airline: "Air France", arrival: DateTime.strptime("06/25/2018 16:20", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("06/25/2018 5:45", "%m/%d/%Y %H:%M"), airport: "John F. Kennedy Airport (JFK)", travelgrouping_id: 18)
+Outbound.create(airline: "Air France", arrival: DateTime.strptime("06/26/2018 6:50", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("06/26/2018 9:10", "%m/%d/%Y %H:%M"), airport: "Charles de Gaulle (CDG)", travelgrouping_id: 18)
+Inbound.create(airline: "Transavia-Delta", arrival: DateTime.strptime("07/05/2018 09:35", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("07/05/2018 14:35", "%m/%d/%Y %H:%M"), airport: "Marrakesh Menara Airport (RAK)", travelgrouping_id: 18)
+Inbound.create(airline: "Royal Dutch Airline KLM", arrival: DateTime.strptime("07/05/2018 12:25", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("07/05/2018 13:55", "%m/%d/%Y %H:%M"), airport: "Amsterdam Airport Schiphol (AMS)", travelgrouping_id: 18)
 
 
 ## MELISSA
-Outbound.create(airline: "Delta", arrival: DateTime.strptime("06/25/2017 9:18", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("06/25/2017 11:05", "%m/%d/%Y %H:%M"), airport: "O'Hare (ORD)", travelgrouping_id: 3)
-Outbound.create(airline: "Delta", arrival: DateTime.strptime("06/26/2017 12:05", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("06/26/2017 5:15", "%m/%d/%Y %H:%M"), airport: "Logan International(BOS)", travelgrouping_id: 3)
-Inbound.create(airline: "Transavia-Delta", arrival: DateTime.strptime("07/05/2017 09:35", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("07/05/2017 14:35", "%m/%d/%Y %H:%M"), airport: "Marrakesh Menara Airport (RAK)", travelgrouping_id: 3)
-Inbound.create(airline: "Royal Dutch Airline KLM", arrival: DateTime.strptime("07/05/2017 12:25", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("07/05/2017 13:55", "%m/%d/%Y %H:%M"), airport: "Amsterdam Airport Schiphol (AMS)", travelgrouping_id: 3)
+Outbound.create(airline: "Delta", arrival: DateTime.strptime("06/25/2018 9:18", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("06/25/2018 11:05", "%m/%d/%Y %H:%M"), airport: "O'Hare (ORD)", travelgrouping_id: 19)
+Outbound.create(airline: "Delta", arrival: DateTime.strptime("06/26/2018 12:05", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("06/26/2018 5:15", "%m/%d/%Y %H:%M"), airport: "Logan International(BOS)", travelgrouping_id: 19)
+Inbound.create(airline: "Transavia-Delta", arrival: DateTime.strptime("07/05/2018 09:35", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("07/05/2018 14:35", "%m/%d/%Y %H:%M"), airport: "Marrakesh Menara Airport (RAK)", travelgrouping_id: 19)
+Inbound.create(airline: "Royal Dutch Airline KLM", arrival: DateTime.strptime("07/05/2018 12:25", "%m/%d/%Y %H:%M"), departure: DateTime.strptime("07/05/2018 13:55", "%m/%d/%Y %H:%M"), airport: "Amsterdam Airport Schiphol (AMS)", travelgrouping_id: 19)
