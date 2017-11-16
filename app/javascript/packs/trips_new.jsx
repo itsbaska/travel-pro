@@ -5,9 +5,9 @@ import NewTrip from '../components/NewTrip'
 import NavigationBar from '../components/NavigationBar'
 
 const TripNew = props => (
-	<div> 
-		<NewTrip/> 
-	</div> 
+	<div className="main-content">
+		<NewTrip/>
+	</div>
 )
 
 document.addEventListener('DOMContentLoaded', () => {

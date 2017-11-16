@@ -5,7 +5,8 @@ import PropTypes from 'prop-types'
 
 
 const Trip = props => (
-  <div className="main-content">
+  <div className="main-content home-page">
+  <img className="home-image" src="../../``````assets/images/home_photo.jpeg"/>
   </div>
 )
 

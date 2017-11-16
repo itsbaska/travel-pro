@@ -23,7 +23,7 @@ class Trips extends React.Component {
     if (this.state.trips.length === 0) {
       return (
         <div>
-          <ul>
+          <ul className="dashboard-list">
             <li>You have not created any trips yet!</li>
           </ul>
         </div>
@@ -31,7 +31,7 @@ class Trips extends React.Component {
     } else {
       return (
         <div>
-          <ul>
+          <ul className="dashboard-list">
             {this.state.trips}
           </ul>
         </div>
