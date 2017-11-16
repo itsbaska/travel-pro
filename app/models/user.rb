@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :travel_trips,  -> { distinct }, through: :travelgroupings, source: :trip
 
   validates :first_name, :last_name, :email, :phone_number, presence: true
+  
   validates :email, uniqueness: true,  :format => { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i }
   validates :phone_number, :format => { with: /\d{3}-\d{3}-\d{4}/ }
 
