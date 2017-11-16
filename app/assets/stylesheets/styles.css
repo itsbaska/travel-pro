@@ -426,6 +426,10 @@ canvas.chartjs-render-monitor {
 #FFC059
 */
 
+.receipt-image {
+  max-width: 300px;
+}
+
 @supports not (display: grid) {
   .page-title,
   .main-content,
@@ -438,6 +442,9 @@ canvas.chartjs-render-monitor {
 @media screen and (min-width: 800px) {
     @supports (display: grid) {
 
+  .receipt-image {
+    max-width: 500px;
+  }
 
 
   .button-container {
