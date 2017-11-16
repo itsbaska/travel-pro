@@ -49,10 +49,10 @@ class NewTrip extends React.Component {
           <input type="hidden" name="authenticity_token" value={this.state.token} readOnly={true} />
 
           <label htmlFor="name">Name:</label>
-          <input type="text" name="name" onChange={this.handleNewTripChange}/>
+          <input type="text" name="name" onChange={this.handleNewTripChange} placeholder="Sustainable Development Goals"/>
 
           <label htmlFor="location">Location:</label>
-          <input type="text" name="location" onChange={this.handleNewTripChange}/>
+          <input type="text" name="location" onChange={this.handleNewTripChange} placeholder="Ulaanbaatar, Mongolia"/>
 
           <label htmlFor="start_date">Start date:</label>
           <input type="date" name="start_date" onChange={this.handleNewTripChange} />
@@ -73,10 +73,10 @@ class NewTrip extends React.Component {
           <h2>Create New Trip</h2>
           <input type="hidden" name="authenticity_token" value={this.state.token} readOnly={true} />
           <label htmlFor="name">Name:</label>
-          <input type="text" name="name" onChange={this.handleNewTripChange}/>
+          <input type="text" name="name" onChange={this.handleNewTripChange} placeholder="Sustainable Development Goals"/>
 
           <label htmlFor="location">Location:</label>
-          <input type="text" name="location" onChange={this.handleNewTripChange}/>
+          <input type="text" name="location" onChange={this.handleNewTripChange} placeholder="Ulaanbaatar, Mongolia"/>
 
           <label htmlFor="start_date">Start date:</label>
           <input type="date" name="start_date" onChange={this.handleNewTripChange}/>

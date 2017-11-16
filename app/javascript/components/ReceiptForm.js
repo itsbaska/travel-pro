@@ -96,13 +96,13 @@ class ReceiptForm extends React.Component {
           <input type="hidden" name="authenticity_token" value={this.state.token} readOnly={true} />
 
           <label htmlFor="store">Store: </label>
-          <input type="text" name="store" onChange={this.handleReceiptChange}/>
+          <input type="text" name="store" onChange={this.handleReceiptChange }placeholder="Target"/>
 
           <label htmlFor="total">Total: $</label>
-          <input type="text" name="total" onChange={this.handleReceiptChange}/>
+          <input type="text" name="total" onChange={this.handleReceiptChange} placeholder="25.50"/>
 
             <label htmlFor="receipt">Receipt:</label>
-            <Dropzone onDrop={this.uploadFile.bind(this)}/>
+            <Dropzone className="receipt-drop-zone" onDrop={this.uploadFile.bind(this)}>Enter Receipt Here</Dropzone>
              <input type="hidden"  name="photo" value={this.state.images.map((image) => image.url)} onChange={this.handleReceiptChange} />
             <ol>
               {list}
@@ -126,13 +126,13 @@ class ReceiptForm extends React.Component {
             <input type="hidden" name="authenticity_token" value={this.state.token} readOnly={true} />
 
             <label htmlFor="store">Store: </label>
-            <input type="text" name="store" onChange={this.handleReceiptChange}/>
+            <input type="text" name="store" onChange={this.handleReceiptChange} placeholder="Target"/>
 
             <label htmlFor="total">Total: $</label>
-            <input type="text" name="total" onChange={this.handleReceiptChange}/>
+            <input type="text" name="total" onChange={this.handleReceiptChange} placeholder="25.50"/>
 
             <label htmlFor="receipt">Receipt:</label>
-            <Dropzone onDrop={this.uploadFile.bind(this)} />
+            <Dropzone className="receipt-drop-zone" onDrop={this.uploadFile.bind(this)}>Enter Receipt Here</Dropzone>
             <input type="hidden" name="photo" value={this.state.images.map((image) => image.url)} onChange={this.handleReceiptChange} />
              <ol>
               {list}

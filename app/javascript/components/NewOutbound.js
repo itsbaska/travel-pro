@@ -44,8 +44,7 @@ class NewOutbound extends React.Component {
         <div>
         <form className="outbound-new-form" method="post" action={"/trips/" + this.state.trip.id + "/outbounds"} onSubmit={this.handleNewOutboundSubmit}>
         <input type="hidden" name="authenticity_token" value={this.state.token} readOnly={true} />
-          <h2>Add Booking Info</h2>
-          <h4>Outbound</h4>
+          <h2>Add Outbound Booking Info</h2>
           <Errors>{this.state.errors}</Errors>
 
           <label htmlFor="airport">Airport: </label>
@@ -68,14 +67,13 @@ class NewOutbound extends React.Component {
       return (
         <form className="outbound-new-form" method="post" action={"/trips/" + this.state.trip.id + "/outbounds"} onSubmit={this.handleNewOutboundSubmit}>
         <input type="hidden" name="authenticity_token" value={this.state.token} readOnly={true} />
-          <h2>Add Booking Info</h2>
-          <h4>Outbound</h4>
+          <h2>Add Outbound Booking Info</h2>
 
           <label htmlFor="airport">Airport: </label>
-          <input type="text" name="airport" onChange={this.handleNewOutboundChange} />
+          <input type="text" name="airport" onChange={this.handleNewOutboundChange} placeholder="O'Hare"/>
 
           <label htmlFor="airline">Airline: </label>
-          <input type="text" name="airline" onChange={this.handleNewOutboundChange} />
+          <input type="text" name="airline" onChange={this.handleNewOutboundChange} placeholder="Emirates"/>
 
           <label htmlFor="arrival">Arrival: </label>
           <input type="datetime-local" name="arrival" onChange={this.handleNewOutboundChange} />

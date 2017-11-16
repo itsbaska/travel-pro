@@ -45,15 +45,14 @@ class NewInbound extends React.Component {
         <form className="inbound-new-form" method="post" action={"/trips/" + this.state.trip.id + "/inbounds"} onSubmit={this.handleNewInboundSubmit}>
         <input type="hidden" name="authenticity_token" value={this.state.token} readOnly={true} />
 
-          <h2>Add Booking Info</h2>
-          <h4>Inbound</h4>
+          <h2>Add Inbound Booking Info</h2>
           <Errors>{this.state.errors}</Errors>
 
           <label htmlFor="airport">Airport:</label>
-          <input type="text" name="airport" onChange={this.handleNewInboundChange} />
+          <input type="text" name="airport" onChange={this.handleNewInboundChange} placeholder="O'Hare"/>
 
           <label htmlFor="airline">Airline:</label>
-          <input type="text" name="airline" onChange={this.handleNewInboundChange} />
+          <input type="text" name="airline" onChange={this.handleNewInboundChange} placeholder="United"/>
 
           <label htmlFor="arrival">Arrival:</label>
           <input type="datetime-local" name="arrival" onChange={this.handleNewInboundChange} />
@@ -69,14 +68,13 @@ class NewInbound extends React.Component {
         <form className="inbound-new-form" method="post" action={"/trips/" + this.state.trip.id + "/inbounds"} onSubmit={this.handleNewInboundSubmit}>
           <input type="hidden" name="authenticity_token" value={this.state.token} readOnly={true} />
 
-          <h2>Add Booking Info</h2>
-          <h4>Inbound</h4>
+          <h2>Add Inbound Booking Info</h2>
 
           <label htmlFor="airport">Airport:</label>
-          <input type="text" name="airport" onChange={this.handleNewInboundChange}/>
+          <input type="text" name="airport" onChange={this.handleNewInboundChange} placeholder="O'Hare"/>
 
           <label htmlFor="airline">Airline:</label>
-          <input type="text" name="airline" onChange={this.handleNewInboundChange}/>
+          <input type="text" name="airline" onChange={this.handleNewInboundChange} placeholder="Emirates"/>
 
           <label htmlFor="arrival">Arrival:</label>
           <input type="datetime-local" name="arrival" onChange={this.handleNewInboundChange}/>
