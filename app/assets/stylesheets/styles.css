@@ -1,11 +1,15 @@
 html {
   margin: 0;
-  min-height: 100%;
+  height: 100vh;
 }
 
 body {
   font-family: 'Lato';
-  height: 100%;
+  min-height: 100vh !important;
+}
+
+.site {
+  height: 100vh;
 }
 
 h2 {
@@ -35,6 +39,10 @@ nav li a {
 a:link {
   text-decoration: none;
 }
+
+/*-------------------------------------------*/
+
+
 
 /*-------------------------------------------*/
 
@@ -136,11 +144,45 @@ button .fa-bars {
   color: #fff;
 }
 
+/*---------------------------------*/
+
+.button-container {
+  min-height: 80vh;
+  padding: 30px;
+  box-sizing: border-box;
+  background: url("https://slack-imgs.com/?c=1&url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1480504612934-8170966f69e0%3Fixlib%3Drb-0.3.5%26q%3D80%26fm%3Djpg%26crop%3Dentropy%26cs%3Dtinysrgb%26w%3D1080%26fit%3Dmax%26s%3D866ab1e975cd22a154d01d281f6a9fe5");
+  background-position: center;
+  background-repeat: no-repeat;
+
+
+}
+.login-button, .register-button {
+  background-color: #69D3D9;
+  outline: 0;
+  border: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+  border-radius: 7px;
+  display: block;
+  box-sizing: border-box;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.login-button {
+  margin: 40px 0;
+}
+
 /*-------------------------------------------*/
 
 .login-form, .register-form, .travelgroup-new-form, .inbound-new-form, .outbound-new-form, .trip-new-form, .receipt-form {
   box-sizing: border-box;
   padding: 25px;
+  min-height: 80vh;
+
 }
 
 .login-form h2, .register-form h2, .inbound-new-form h2, .outbound-new-form h2, .trip-new-form h2, .receipt-form h2 {
@@ -367,6 +409,8 @@ canvas.chartjs-render-monitor {
   text-align: center;
   background-color: gray;
   color: #fff;
+  position: relative;
+  bottom: 0px;
 }
 
 .footer p {
@@ -391,11 +435,43 @@ canvas.chartjs-render-monitor {
   }
 }
 
-@media screen and (min-width: 330px) {
+@media screen and (min-width: 800px) {
     @supports (display: grid) {
+
+
+
+  .button-container {
+    background: none;
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+  .home-page button {
+    background-color: #69D3D9;
+    outline:0;
+    border: 0;
+    padding: 20px;
+    color: #fff;
+    width: 200px;
+    box-sizing: border-box;
+    display: block;
+    margin: 100px auto;
+  }
+
 
     body {
       background-color: #fff
+    }
+
+    .header-container {
+      vertical-align: middle;
+      background-color: #69D3D9;
+      padding: 30px;
+      margin-bottom: 50px;
+    }
+
+    .header-container h2 {
+      font-size: 1.4em;
     }
 
     #navigation-bar {
@@ -426,7 +502,7 @@ canvas.chartjs-render-monitor {
     }
 
     .login-form, .register-form, .travelgroup-new-form, .inbound-new-form, .outbound-new-form, .trip-new-form, .receipt-form {
-      width: 300px;
+      width: 350px;
       margin: 0 auto;
       box-sizing: border-box;
       padding: 25px;
@@ -439,6 +515,8 @@ canvas.chartjs-render-monitor {
 
     .login-form label, .register-form label, .travelgroup-new-form label, .inbound-new-form label, .outbound-new-form label, .trip-new-form label, .receipt-form label {
       display: block;
+      box-sizing: border-box;
+
       width: 300px;
     }
 
@@ -452,6 +530,8 @@ canvas.chartjs-render-monitor {
       font-size: 1em;
       box-sizing: border-box;
       border-radius: 5px;
+      box-sizing: border-box;
+
     }
 
     .login-form input[type="email"]::-webkit-input-placeholder, .travelgroup-new-form input[type="email"]::-webkit-input-placeholder, .outbound-new-form input[type="text"]::-webkit-input-placeholder, .inbound-new-form input[type="text"]::-webkit-input-placeholder, .trip-new-form input[type="text"]::-webkit-input-placeholder, .receipt-form input[type="text"]::-webkit-input-placeholder {
@@ -473,6 +553,8 @@ canvas.chartjs-render-monitor {
       font-family: 'Montserrat', sans-serif;
       color: #fff;
       text-shadow: 1px 1px #00A7B3;
+      box-sizing: border-box;
+
     }
 
     .receipt-drop-zone {
@@ -543,7 +625,6 @@ canvas.chartjs-render-monitor {
       color: #fff;
       font-family: sans-serif;
       text-align: center;
-      bottom: 0;
     }
 
     .add-info-buttons {
@@ -584,6 +665,7 @@ canvas.chartjs-render-monitor {
       grid-area: footer;
       box-sizing: border-box;
       background-color: gray;
+      height: 70px;
     }
 
     .sidebar li {
@@ -591,20 +673,30 @@ canvas.chartjs-render-monitor {
     }
 
     .site {
+      height: 100vh;
       display: grid;
       grid-template-columns: 1fr 5fr;
+      grid-template-rows: 95% 5%;
       grid-template-areas:
-        "sidebar main"
         "sidebar main"
         "footer main";
     }
 
     .column-1 {
       grid-area: column-one;
+
     }
 
     .column-2 {
       grid-area: column-two;
+    }
+
+    .dashboard-list {
+
+    }
+    .dashboard-list li {
+      margin: 0 auto;
+      width: 40%;
     }
 
     .trips-list {
