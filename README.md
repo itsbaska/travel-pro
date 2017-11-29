@@ -24,7 +24,7 @@ It's easy to manage your trips when the only person you have to concern yourself
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License
 
 ## Acknowledgments
 
