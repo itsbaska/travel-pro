@@ -32,7 +32,7 @@ gem 'bcrypt', '~> 3.1.7'
  gem 'react-rails'
 gem 'paperclip'
 gem 'figaro'
-gem 'aws-sdk', '~> 2.3'
+# gem 'aws-sdk', '~> 2.3'
 gem 'cloudinary'
 
 group :development, :test do
