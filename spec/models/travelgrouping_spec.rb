@@ -17,15 +17,3 @@ RSpec.describe Travelgrouping, type: :model do
     it { should belong_to(:trip) }
   end
 end
-
-
-# describe Travelgrouping do
-#   let(:travelgrouping) { Travelgrouping.new }
-
-#   describe "associations" do
-#   	it { Travelgrouping.reflect_on_association(:trip).macro.should eq(:belongs_to)}
-#     it { Travelgrouping.reflect_on_association(:outbounds).macro.should eq(:has_many)}
-#     it { Travelgrouping.reflect_on_association(:inbounds).macro.should eq(:has_many)}
-#     it { Travelgrouping.reflect_on_association(:traveller).macro.should eq(:belongs_to)}
-#   end
-# end
