@@ -28,12 +28,15 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+# react rails
  gem 'webpacker', '~> 3.0'
  gem 'react-rails'
+ # receipt upload
 gem 'paperclip'
-gem 'figaro'
-gem 'aws-sdk', '~> 2.3'
 gem 'cloudinary'
+gem 'figaro'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -41,6 +44,9 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.6'
   gem 'rails-controller-testing'
   gem "launchy"
+  gem 'factory_bot'
+  gem 'shoulda', "~> 3.5"
+  gem 'shoulda-matchers', "~> 2.0"
 end
 
 group :development do

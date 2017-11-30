@@ -1,61 +1,31 @@
 require 'rails_helper'
 
-describe User do
-  let(:user) { User.new }
+describe FactoryBot do
+  let(:factory)  { FactoryBot::Factory.new(:user) }
 
-  describe "assocations" do 
-  	it { User.reflect_on_association(:travelgroupings).macro.should eq(:has_many)}
-    it { User.reflect_on_association(:trips).macro.should eq(:has_many)}
-    it { User.reflect_on_association(:receipts).macro.should eq(:has_many)}
-    it { User.reflect_on_association(:inbounds).macro.should eq(:has_many)}
-   	it { User.reflect_on_association(:outbounds).macro.should eq(:has_many)}
-    it { User.reflect_on_association(:travel_trips).macro.should eq(:has_many)}
-  end 
+  it "finds a registered factory" do
+    FactoryBot.register_factory(factory)
+    expect(FactoryBot.factory_by_name(factory.name)).to eq factory
+  end
+end
 
-  describe "full_name" do 
-  	it "returns back the full_name of user" do 
-  		user = User.create(first_name: "Victoria", last_name: "Luc", phone_number: "847-312-4925", email: "victoriajeniluc@gmail.com", password: "password")
-  		expect(user.full_name).to eq("Victoria Luc")
-  	end 
-  end 
+RSpec.describe User, type: :model do
+  context "associations" do
+    it { should have_many(:trips) }
+    it { should have_many(:receipts) }
+    it { should have_many(:travelgroupings) }
+    it { should have_many(:inbounds) }
+    it { should have_many(:outbounds) }
+    it { should have_many(:travel_trips) }
+  end
 
-  describe "validations" do 
-		it "is valid with valid attributes" do 
-			user = User.create(first_name: "Victoria", last_name: "Luc", phone_number: "847-312-4925", email: "victoriajeniluc@gmail.com", password: "password")
+  context "model" do
+    it { should validate_presence_of(:first_name) }
+    it { should validate_presence_of(:last_name) }
+    it { should validate_presence_of(:email) }
+    it { should validate_presence_of(:password) }
+    it { should validate_presence_of(:phone_number) }
+  end
+end
 
-			expect(user).to be_valid 
-		end 
 
-		it "is not valid without first_name" do 
-			user = User.create(last_name: "Luc", phone_number: "847-312-4925", email: "victoriajeniluc@gmail.com", password: "password")
-
-			expect(user).to_not be_valid 
-		end
-
-		it "is not valid without last_name" do 
-			user = User.create(first_name: "Victoria", phone_number: "847-312-4925", email: "victoriajeniluc@gmail.com", password: "password")
-
-			expect(user).to_not be_valid 
-		end
-
-		it "is not valid without phone_number" do 
-			user = User.create(first_name: "Victoria", last_name: "Luc", email: "victoriajeniluc@gmail.com", password: "password")
-
-			expect(user).to_not be_valid 
-		end 
-
-		it "is not valid without email" do 
-			user = User.create(first_name: "Victoria", last_name: "Luc", phone_number: "847-312-4925", password: "password")
-
-			expect(user).to_not be_valid 
-		end
-
-		it "validates email uniqueness" do 
-			user = User.create(first_name: "Victoria", last_name: "Luc", phone_number: "847-312-4925", email: "vk@gmail.com", password: "password")
-			user1 = User.create(first_name: "Kevin", last_name: "Luc", email: "vk@gmail.com", phone_number: "847-111-0000", password: "password")
-
-			expect(user1).to_not be_valid 
-		end 
- 
-  end 
-end 
