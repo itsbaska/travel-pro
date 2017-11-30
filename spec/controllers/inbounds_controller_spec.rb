@@ -5,19 +5,19 @@ describe InboundsController do
 
 	let(:trip) { Trip.create(name: "Conversation Partner Convention", location: "Japan", budget: 538.90, organizer: user, start_date: Date.strptime("11/25/2017", "%m/%d/%Y"), end_date: Date.strptime("11/30/2017", "%m/%d/%Y")) }
 
-	describe "GET #index" do 
+	describe "GET #index" do
 		it "responds with status code 200" do
-			get :index, params: { trip_id: trip.id } 
+			get :index, params: { trip_id: trip.id }
 			expect(response).to have_http_status 302
-		end 
+		end
 
 		it "redirects the user to the login page if not logged in and wants to view all the inbounds" do
-			get :index, params: { trip_id: trip.id } 
+			get :index, params: { trip_id: trip.id }
 			expect(response).to redirect_to("/login")
-		end 
-	end 
+		end
+	end
 
-	describe "GET #new" do 
+	describe "GET #new" do
 		let(:user) { User.create(first_name: "Victoria", last_name: "Luc", phone_number: "847-312-4925", email: "victoriajeniluc@gmail.com", password: "password") }
 
 		let(:trip) { Trip.create(name: "Conversation Partner Convention", location: "Japan", budget: 538.90, organizer: user, start_date: Date.strptime("11/25/2017", "%m/%d/%Y"), end_date: Date.strptime("11/30/2017", "%m/%d/%Y")) }
@@ -25,16 +25,16 @@ describe InboundsController do
 		it "responds with status code 200" do
 			get :new, params: { trip_id: trip.id }
 			expect(response).to have_http_status 302
-		end 
+		end
 
-		it "assigns a new inbound to @inbound" do 
+		it "assigns a new inbound to @inbound" do
 			get :new, params: { trip_id: trip.id }
 			expect(assigns(:inbound)).to be_a_new Inbound
-		end 
+		end
 
 		it "redirects the user to the login page if not logged in and wants to create a new inbound" do
 			get :new, params: { trip_id: trip.id }
 			expect(response).to redirect_to("/login")
-		end 
-	end 
-end 
+		end
+	end
+end
