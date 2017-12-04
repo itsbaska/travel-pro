@@ -1,27 +1,15 @@
-class ApplicationController < ActionController::Base
-  def current_user
-    return unless session[:user_id]
-    @current_user ||= User.find(session[:user_id])
-  end
-  helper_method :current_user
+class ApplicationController < ActionController::API
+  include Response
+  include ExceptionHandler
 
-  def logged_in?
-    session[:user_id] != nil
-  end
-  helper_method :logged_in?
+  # called before every action on controllers
+  before_action :authorize_request
+  attr_reader :current_user
 
-  def authenticate!
-    redirect_to '/login' unless logged_in?
-  end
-  helper_method :authenticate!
+  private
 
-  def authorize!(user)
-    redirect_to '/not_authorized' unless authorized?(user)
+  # Check for valid request token and return user
+  def authorize_request
+    @current_user = (AuthorizeApiRequest.new(request.headers).call)[:user]
   end
-  helper_method :authorize!
-
-  def authorized?(user)
-    current_user == user
-  end
-  helper_method :authorized?
 end

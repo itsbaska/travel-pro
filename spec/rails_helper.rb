@@ -6,7 +6,10 @@ require File.expand_path('../../config/environment', __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'spec_helper'
 require 'rspec/rails'
-# require_relative "./support/request_spec_helper"
+
+require_relative "./support/request_spec_helper"
+require_relative "./support/controller_spec_helper"
+
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -26,11 +29,11 @@ require 'rspec/rails'
 
 # Checks for pending migrations and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove this line.
-module RequestSpecHelper
-  def json
-    JSON.parse(response.body)
-  end
-end
+# module RequestSpecHelper
+#   def json
+#     JSON.parse(response.body)
+#   end
+# end
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
@@ -58,7 +61,7 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
 
   config.include RequestSpecHelper
-  # config.include ControllerSpecHelper
+  config.include ControllerSpecHelper
   # Filter lines from Rails gems in backtraces.
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:

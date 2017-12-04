@@ -1,4 +1,5 @@
 require 'rails_helper'
+require_relative '../../app/controllers/concerns/exception_handler.rb'
 
 RSpec.describe AuthorizeApiRequest do
   # Create test user

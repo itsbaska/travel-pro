@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   
   get '/users/sign_up', to: 'users#new', as: 'new_user'
-  post '/users', to: 'users#create'
+  # post '/users', to: 'users#create'
+  post 'signup', to: 'users#create'
   get '/users/:id', to: 'users#show', as: 'user'
+  post 'auth/login', to: 'authentication#authenticate'
+
 
   resources :trips do
     resources :outbounds
@@ -11,7 +14,7 @@ Rails.application.routes.draw do
     resources :travelgroupings, only: [:new, :create]
   end
 
-  get "/login", to: "sessions#new"
+  # get "/login", to: "sessions#new"
   post "/sessions", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
   get "/users/:id/dashboards", to: "dashboards#show", as: 'user_dashboard'
